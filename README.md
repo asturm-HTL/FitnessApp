@@ -20,9 +20,9 @@ In der MainActivity kann man zwischen...
 Der User kann sich Abmelden. Dadurch startet wieder die Login-Activity
 
 ## REST API
-Als REST API habe ich auf einer Website, welche ich letztes Jahr gemacht habe, zwei Datenbanken erstellt, in der Ersten befinden sich alle Übungen. In der zweiten Datenbank sind alle Trainingspläne gespeichert. Ebenfalls habe ich auf dieser Website eine Unterseite erstellt auf welcher ich die benötigten Bilder der Übungen gespeichert habe.
+Als REST API habe ich auf einer Website, zwei Datenbanken erstellt, in der ersten Datenbank befinden sich alle Übungen. In der zweiten Datenbank sind alle Trainingspläne gespeichert. Ebenfalls habe ich auf dieser Website eine Unterseite erstellt auf welcher ich die benötigten Bilder der Übungen gespeichert habe.
 * Übungen: http://www.fitnesscenter-mitter.at/fitnessapp.php
-* Traingspläne: *'folgt'*
+* Traingspläne: *folgt*
 * Bilder: http://www.fitnesscenter-mitter.at/FitnessApp/ExercisePicture.html
 
 ----------README wird noch erweitert---------
