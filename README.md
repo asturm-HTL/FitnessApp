@@ -6,3 +6,6 @@ Die App ist eine Hilfe für alle Traingsanfänger- und fortgeschrittene. Sie sol
 
 ## App-Status
 Momentan steht die App noch in Planung.
+
+## Aufbau des Repository
+Bei einem Update des README-Files im Repository wird ein commit mit einem \_v.xx angehängt. Bei Änderungen im Code werden die Commits selbsterklärend benannt (z.B. "Layout erstellt").
