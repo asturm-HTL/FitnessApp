@@ -29,7 +29,7 @@ public class Splash extends AppCompatActivity
                 Intent intent = new Intent(Splash.this, Login.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
+                finish(); //Closes when 'Back'
             }
         }, SLASHSCREEN);
     }
