@@ -85,6 +85,7 @@ public class Login extends AppCompatActivity
     //-----------------------GETUSERS----------------------
 
     public String outputString;
+
     private class GetUsers extends AsyncTask<String, Integer, String>
     {
 
@@ -166,7 +167,6 @@ public class Login extends AppCompatActivity
 
     public void getUsers(View view)
     {
-
         Login.GetUsers task = new Login.GetUsers();
         task.execute();
 
@@ -174,15 +174,13 @@ public class Login extends AppCompatActivity
         {
             outputString  = task.get();
 
-            System.out.println("MOIS_: " + outputString);
-            if(outputString.contains(username) && outputString.contains(password))
-            { //TODO ---outputString zerlegen
-                Toast.makeText(Login.this, "OK_"+username +" " +password, Toast.LENGTH_SHORT).show();
+            if((!username.equals("")) && (!password.equals("")) && outputString.contains("\"username\":\""+username+"\"") && outputString.contains("\"password\":\""+password+"\""))
+            {
                 startMain();
             }
             else
             {
-
+                Toast.makeText(this, "username or password incorrect!", Toast.LENGTH_SHORT).show();
             }
         }
         catch (ExecutionException e)

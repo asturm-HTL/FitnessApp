@@ -37,21 +37,21 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         View view = new View(this);
-        getAllToDos(view);
-        addToDo(view);
+        getExercises(view);
+        //addToDo(view);
 
     }
 
 
 
-//----------GETALLTODOS---------------- //TODO--TestTask noch richtig umändern
+    //----------GetExercises---------------- //TODO--TestTask noch richtig umändern
 
-    private class TestTask extends AsyncTask<String, Integer, String>
+    private class GetExercises extends AsyncTask<String, Integer, String>
     {
 
-        private final String TAG = TestTask.class.getSimpleName();
+        private final String TAG = GetExercises.class.getSimpleName();
 
-        private static final String serverURL = "http://www.fitnesscenter-mitter.at/fitnessapp.php";
+        private static final String serverURL = "http://www.fitnesscenter-mitter.at/exercises.php";
 
         @Override
         protected String doInBackground(String... strings)
@@ -122,10 +122,10 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void getAllToDos(View view)
+    public void getExercises(View view)
     {
 
-        MainActivity.TestTask task = new MainActivity.TestTask();
+        MainActivity.GetExercises task = new MainActivity.GetExercises();
         task.execute();
 
         try

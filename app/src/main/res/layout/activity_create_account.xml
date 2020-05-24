@@ -1,9 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateAccount">
+    android:gravity="center"
+    tools:context=".Login"
+    android:background="@drawable/createacc"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="238dp"
+            android:layout_height="174dp"
+            android:layout_gravity="center"
+            android:src="@drawable/gainschriftzug"
+
+            />
+
+        <EditText
+            android:id="@+id/firstnameCreateET"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:hint="first name"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/edit"
+            android:padding="20dp"
+            />
+        <EditText
+            android:id="@+id/lastnameCreateET"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:hint="last name"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edit"
+            android:padding="20dp"
+            />
+
+        <EditText
+            android:id="@+id/usernameCreateET"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:hint="username"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edit"
+            android:padding="20dp"
+            />
+
+        <EditText
+            android:id="@+id/passwordCreateET"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edit"
+            android:padding="20dp"
+            />
+
+        <EditText
+            android:id="@+id/passwordReapeatCreateET"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:hint="repeat password"
+            android:inputType="textPassword"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edit"
+            android:padding="20dp"
+            />
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="215dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="Create Account"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/button"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:text="With creating an account you accept our terms of use"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:textSize="13dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
