@@ -103,7 +103,7 @@
             />
 
         <Button
-            android:id="@+id/loginBtn"
+            android:id="@+id/createAccountBtn"
             android:layout_width="215dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
@@ -113,6 +113,7 @@
             android:background="@drawable/button"
             />
         <TextView
+            android:id="@+id/termOfUseCreateTV"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:text="With creating an account you accept our terms of use"

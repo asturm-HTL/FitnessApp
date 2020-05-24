@@ -176,7 +176,7 @@ public class Login extends AppCompatActivity
 
             if((!username.equals("")) && (!password.equals("")) && outputString.contains("\"username\":\""+username+"\"") && outputString.contains("\"password\":\""+password+"\""))
             {
-                startMain();
+                startScreenAfterLogin(username); //TODO ---- user herausfinden (firstname, lastname,...)
             }
             else
             {
@@ -194,10 +194,11 @@ public class Login extends AppCompatActivity
     }
     //---------------------------startMain------------------------
 
-    public void startMain()
+    public void startScreenAfterLogin(String name)
     {
-        Intent mainIntent = new Intent(Login.this, MainActivity.class);
-        startActivity(mainIntent);
+        ScreenAfterLogin.username = name;
+        Intent startScreenAfterLoginIntent = new Intent(this, ScreenAfterLogin.class);
+        startActivity(startScreenAfterLoginIntent);
     }
 
 
