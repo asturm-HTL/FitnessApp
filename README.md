@@ -9,3 +9,9 @@ Momentan steht die App noch in Planung.
 
 ## Aufbau des Repository
 Bei einem Update des README-Files im Repository wird ein commit mit einem \_v.xx angehängt. Bei Änderungen im Code werden die Commits selbsterklärend (Englisch) benannt (z.B. "Layout created").
+
+### Projektantrag
+Der Projektantrag ist als 'Projektantrag.pdf' im Repository zu finden.
+
+### Projektplan
+Der Projektplan ist als 'Projektplan.pdf' im Repository zu finden.
