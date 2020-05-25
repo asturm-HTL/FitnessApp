@@ -17,4 +17,4 @@ Der Projektantrag ist als 'GAIN_Projektantrag.pdf' im Repository zu finden.
 Der Projektplan ist als 'GAIN_Projektplan.pdf' im Repository zu finden.
 
 ### Readme
-Das Readme ist als 'Readme.md' im Repository zu finden.
+Das Readme ist als 'README.md' im Repository zu finden.
