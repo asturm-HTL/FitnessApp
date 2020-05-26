@@ -27,8 +27,16 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity
 {
 
-    public String string2;
-    public String s03;
+    public String exercisesGetRequest;
+
+    //-------------Variables which get changed from LoginActivity------------------
+        public static int id;
+        public static String firstname;
+        public static String lastname;
+        public static String username;
+        public static String password;
+
+    //---------------------------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -39,6 +47,12 @@ public class MainActivity extends AppCompatActivity
         View view = new View(this);
         getExercises(view);
         //addToDo(view);
+
+        System.out.println("MOIS_M_id_"+id);
+        System.out.println("MOIS_M_firstname_"+firstname);
+        System.out.println("MOIS_M_lastname_"+lastname);
+        System.out.println("MOIS_M_username_"+username);
+        System.out.println("MOIS_M_password_"+password);
 
     }
 
@@ -82,13 +96,16 @@ public class MainActivity extends AppCompatActivity
 
         private String readResponseStream(BufferedReader reader) throws IOException
         {
-            Log.d(TAG, "entered readResponseStreaulat");
+            Log.d(TAG, "entered readResponseStrem");
+
             StringBuilder stringBuilder = new StringBuilder();
             String line = "";
+
             while ( (line=reader.readLine()) != null)
             {
                 stringBuilder.append(line);
             }
+
             return stringBuilder.toString();
         }
 
@@ -96,11 +113,11 @@ public class MainActivity extends AppCompatActivity
         protected void onPostExecute(String s)
         {
             Log.d(TAG, "entered onPostExecute");
-            outputRepoNames(s, string2);
+            outputExercises(s);
             super.onPostExecute(s);
         }
 
-        private void outputRepoNames(String s, String s2)
+        private void outputExercises(String s)
         {
 
             StringBuilder stringBuilder = new StringBuilder();
@@ -108,17 +125,18 @@ public class MainActivity extends AppCompatActivity
             try
             {
                 JSONArray array = new JSONArray(s);
-                for (int i=0 ; i < array.length() ; i++) {
+
+                for (int i=0 ; i < array.length() ; i++)
+                {
                     JSONObject jsonObject = array.getJSONObject(i);
                     stringBuilder.append(jsonObject);
                     stringBuilder.append(("||"));
                 }
-            } catch (JSONException e)
+            }
+            catch (JSONException e)
             {
                 Log.d(TAG, e.getLocalizedMessage());
             }
-            s2 = stringBuilder.toString();
-
         }
     }
 
@@ -130,10 +148,9 @@ public class MainActivity extends AppCompatActivity
 
         try
         {
-            s03  = task.get();
+            exercisesGetRequest  = task.get();
 
-            Toast.makeText(this, "MOIS_: " +s03, Toast.LENGTH_LONG).show();
-            System.out.println("MOIS_: " + s03);
+            System.out.println("MOIS_Exercises_: " + exercisesGetRequest);
         }
         catch (ExecutionException e)
         {
@@ -146,7 +163,7 @@ public class MainActivity extends AppCompatActivity
     }
     //---------------------------GETENDE------------------------
 
-    //-----------------POSTTEST--------------------------------
+    //-----------------POSTTEST-------------------------------- //TODO --- für CreateAccount
 
     public static String testusername = "testusername";
     public static String testlastname = "testlastname";

@@ -83,23 +83,23 @@ public class CreateAccount extends AppCompatActivity
                 {
                     if((lastname.equals("")))
                     {
-                        lastnameCreateET.setError("Field can't be empty!");
+                        lastnameCreateET.setError("Lastname can't be empty!");
                     }
                     else if((firstname.equals("")))
                     {
-                        firstnameCreateET.setError("Field can't be empty!");
+                        firstnameCreateET.setError("Firstname can't be empty!");
                     }
                     else if((password.equals("")))
                     {
-                        passwordCreateET.setError("Field can't be empty!");
+                        passwordCreateET.setError("Password can't be empty!");
                     }
                     else if((passwordRepeat.equals("")))
                     {
-                        passwordRepeatCreateET.setError("Field can't be empty!");
+                        passwordRepeatCreateET.setError("Password-Repeat can't be empty!");
                     }
                     else if((username.equals("")))
                     {
-                        usernameCreateET.setError("Field can't be empty!");
+                        usernameCreateET.setError("Username can't be empty!");
                     }
                 }
 

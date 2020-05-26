@@ -30,6 +30,14 @@ public class Login extends AppCompatActivity
 
     public static String username;
     public static String password;
+    public static String firstname;
+    public static String lastname;
+    public static int id;
+
+    public String userString;
+
+    public EditText usernameET;
+    public EditText passwordET;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -39,8 +47,8 @@ public class Login extends AppCompatActivity
 
         final View onCreateView = new View(this);
 
-        final EditText usernameET = findViewById(R.id.usernameET);
-        final EditText passwordET = findViewById(R.id.passwordET);
+        usernameET = findViewById(R.id.usernameET);
+        passwordET = findViewById(R.id.passwordET);
         Button loginBtn = findViewById(R.id.loginBtn);
         TextView createAccountTV = findViewById(R.id.createAccountTV);
 
@@ -84,7 +92,7 @@ public class Login extends AppCompatActivity
 
     //-----------------------GETUSERS----------------------
 
-    public String outputString;
+    public String userOutputString;
 
     private class GetUsers extends AsyncTask<String, Integer, String>
     {
@@ -172,15 +180,81 @@ public class Login extends AppCompatActivity
 
         try
         {
-            outputString  = task.get();
+            userOutputString  = task.get();
 
-            if((!username.equals("")) && (!password.equals("")) && outputString.contains("\"username\":\""+username+"\"") && outputString.contains("\"password\":\""+password+"\""))
+            if((!username.equals("")) && (!password.equals("")) && userOutputString.contains("\"username\":\""+username+"\"") && userOutputString.contains("\"password\":\""+password+"\""))
             {
-                startScreenAfterLogin(username); //TODO ---- user herausfinden (firstname, lastname,...)
+                //------get index of username to get the last '{' ----------
+
+                int indexOfUsername = userOutputString.indexOf(username);
+                char userOutputStringChar = userOutputString.charAt(indexOfUsername);
+                char bracketAtBeginningOfUser = '{';
+                int counter = 0;
+
+                //------get the counter of times to get to '{' ------------
+
+                while(userOutputStringChar != bracketAtBeginningOfUser)
+                {
+                    indexOfUsername = indexOfUsername -1;
+                    counter++;
+                    userOutputStringChar = userOutputString.charAt(indexOfUsername);
+                }
+
+                //-------- split the userOutputString into userString by subsequence ----------
+
+                if(userOutputStringChar == bracketAtBeginningOfUser)
+                {
+                    userString = userOutputString.subSequence((userOutputString.indexOf(username)-counter), (userOutputString.indexOf("}", userOutputString.indexOf(username)))+1).toString();
+                    System.out.println("MOISString_"+userString);
+
+                    //------userString cleaning --------
+
+                    userString = userString.replace("{", "");
+                    userString = userString.replace("}","");
+                    userString = userString.replace("\"", "");
+
+                    //-----userString - splits for userData--------
+
+                    String[] parts = userString.split(",");
+                    String[] idsplit = parts[0].toString().split(":");
+                    String[] firstnamesplit = parts[1].toString().split(":");
+                    String[] lastnamesplit = parts[2].toString().split(":");
+                    String[] usernamesplit = parts[3].toString().split(":");
+                    String[] passwordsplit = parts[4].toString().split(":");
+
+                    //---------give the variables the data of the string----------
+
+                    id = Integer.parseInt(idsplit[1].toString());
+                    firstname = firstnamesplit[1].toString();
+                    lastname = lastnamesplit[1].toString();
+                    username = usernamesplit[1].toString();
+                    password = passwordsplit[1].toString();
+
+                    //--------set the variables from MainActivity-------------
+
+                    MainActivity.id = id;
+                    MainActivity.firstname = firstname;
+                    MainActivity.lastname = lastname;
+                    MainActivity.username = username;
+                    MainActivity.password = password;
+                }
+
+                startScreenAfterLogin(username);
             }
             else
             {
-                Toast.makeText(this, "username or password incorrect!", Toast.LENGTH_SHORT).show();
+                if((username.equals("")))
+                {
+                    usernameET.setError("Username can't be empty!");
+                }
+                else if(password.equals(""))
+                {
+                    passwordET.setError("Password can't be empty!");
+                }
+                else
+                {
+                    Toast.makeText(this, "username or password incorrect!", Toast.LENGTH_SHORT).show();
+                }
             }
         }
         catch (ExecutionException e)
