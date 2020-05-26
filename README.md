@@ -18,3 +18,6 @@ Der Projektplan ist als 'GAIN_Projektplan.pdf' im Repository zu finden.
 
 ### Readme
 Das Readme ist als 'README.md' im Repository zu finden.
+
+### Resümee
+Das Resümee ist als 'Resuemee.md' im Repository zu finden.
