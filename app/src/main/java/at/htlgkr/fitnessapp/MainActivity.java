@@ -58,8 +58,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    //----------GetExercises---------------- //TODO--TestTask noch richtig umändern
-
+    //----------GetExercises----------------
     private class GetExercises extends AsyncTask<String, Integer, String>
     {
 

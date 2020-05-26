@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class ScreenAfterLogin extends AppCompatActivity
 {
 
-    public static String username;                  //TODO--- umändern auf firstname
+    public static String firstname;
     private static int SCREENAFTERLOGIN = 1500;
 
     Handler handler;
@@ -23,7 +23,7 @@ public class ScreenAfterLogin extends AppCompatActivity
 
         TextView welcomeTVAfterLogin = findViewById(R.id.welcomteTVAfterLogin);
 
-        welcomeTVAfterLogin.setText("Welcome back,\n" + username );        //TODO -- umändern
+        welcomeTVAfterLogin.setText("Welcome back,\n" + firstname );
 
         handler = new Handler();
         handler.postDelayed(new Runnable()

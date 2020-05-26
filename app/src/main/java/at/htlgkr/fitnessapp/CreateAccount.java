@@ -66,7 +66,6 @@ public class CreateAccount extends AppCompatActivity
                         if(password.equals(passwordRepeat))
                         {
                             //TODO -- POST Request und User anlegen
-                            //TODO --- username, password, firstname,... in der Main festlegen (Mainactivity.set(...))
                             startScreenBeforeMain(firstname);
                         }
                         else
