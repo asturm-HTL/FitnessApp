@@ -239,7 +239,7 @@ public class Login extends AppCompatActivity
                     MainActivity.password = password;
                 }
 
-                startScreenAfterLogin(username);
+                startScreenAfterLogin(firstname);
             }
             else
             {
