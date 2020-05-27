@@ -4,11 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ShowPrograms extends AppCompatActivity {
+public class ShowPrograms extends AppCompatActivity
+{
+
+    //---------------------------Variables from Main---------------------------
+    public static int id;
+    public static String firstname;
+    public static String lastname;
+    public static String username;
+    public static String password;
+    //---------------------------MainVariables-End-----------------------------
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_programs);
+
+        //-------DEBUG---------
+        System.out.println("MOIS_SP_id_"+id);
+        System.out.println("MOIS_SP_firstname_"+firstname);
+        System.out.println("MOIS_SP_lastname_"+lastname);
+        System.out.println("MOIS_SP_username_"+username);
+        System.out.println("MOIS_SP_password_"+password);
+        //-----DEBUG-End------
+
     }
 }

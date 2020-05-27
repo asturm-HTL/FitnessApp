@@ -1,8 +1,10 @@
 package at.htlgkr.fitnessapp;
 
+import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +41,11 @@ public class MainActivity extends AppCompatActivity
 
     //---------------------------------------------------
 
+    public Button createProgramBtn;
+    public  Button showProgramsBtn;
+    public  Button exercisesBtn;
+    public Button timerBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -47,8 +54,6 @@ public class MainActivity extends AppCompatActivity
 
         View view = new View(this);
         getExercises(view);
-        //addToDo(view);
-
 
         //-------DEBUG---------
         System.out.println("MOIS_M_id_"+id);
@@ -56,14 +61,16 @@ public class MainActivity extends AppCompatActivity
         System.out.println("MOIS_M_lastname_"+lastname);
         System.out.println("MOIS_M_username_"+username);
         System.out.println("MOIS_M_password_"+password);
-        //--------------------
+        //-----DEBUG-End------
 
-        Button createProgramBtn = findViewById(R.id.createProgramBtn);
-        Button showProgramsBtn = findViewById(R.id.showProgramsBtn);
-        Button exercisesBtn = findViewById(R.id.exercisesBtn);
-        Button timerBtn = findViewById(R.id.timerBtn);
+        //---------------------Buttons---------------------
+        createProgramBtn = findViewById(R.id.createProgramBtn);
+        showProgramsBtn = findViewById(R.id.showProgramsBtn);
+        exercisesBtn = findViewById(R.id.exercisesBtn);
+        timerBtn = findViewById(R.id.timerBtn);
+        //-------------------Buttons-End--------------------
 
-        //------------------------------onClickListener----------------------------
+        //------------------------------onClickListeners----------------------------
 
             //------------------createProgram-------------------
             createProgramBtn.setOnClickListener(new View.OnClickListener()
@@ -71,7 +78,8 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-
+                    createProgramBtn.setBackgroundResource(R.drawable.createprogramclicked);
+                    startCreateProgram(id, firstname, lastname, username, password);
                 }
             });
 
@@ -81,7 +89,8 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-
+                    showProgramsBtn.setBackgroundResource(R.drawable.showprogramsclicked);
+                    startShowPrograms(id, firstname, lastname, username, password);
                 }
             });
             //--------------------exercises---------------------
@@ -90,7 +99,8 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-
+                    exercisesBtn.setBackgroundResource(R.drawable.exercisesclicked);
+                    startExercises(id, firstname, lastname, username, password);
                 }
             });
             //----------------------timer-----------------------
@@ -99,17 +109,30 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onClick(View v)
                 {
-
+                    timerBtn.setBackgroundResource(R.drawable.timerclicked);
+                    startTimer(id, firstname, lastname, username, password);
                 }
             });
 
-        //--------------------------onCLickLister-Ende-----------------------------------
+        //--------------------------onCLickListers-End-----------------------------------
 
     }
 
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
 
+        //-----------------------setBackgroundRight-----------------------
+        createProgramBtn.setBackgroundResource(R.drawable.createprogrambackground);
+        showProgramsBtn.setBackgroundResource(R.drawable.showprogramsbackground);
+        exercisesBtn.setBackgroundResource(R.drawable.exercisesbackground);
+        timerBtn.setBackgroundResource(R.drawable.timerbackground);
+        //-----------------------setBackground-End-------------------------
+    }
 
-    //----------GetExercises----------------
+    //-----------------------------------------GetExercises-----------------------------------------
+
     private class GetExercises extends AsyncTask<String, Integer, String>
     {
 
@@ -211,7 +234,7 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
     }
-    //---------------------------GETENDE------------------------
+    //----------------------------------------GetExercises-End---------------------------------------
 
     //-----------------POSTTEST-------------------------------- //TODO --- für CreateAccount
 
@@ -336,37 +359,37 @@ public class MainActivity extends AppCompatActivity
 
     public void startShowPrograms(int id, String firstname, String lastname, String username, String password)
     {
-        CreateProgram.id = id;
-        CreateProgram.firstname = firstname;
-        CreateProgram.lastname = lastname;
-        CreateProgram.username = username;
-        CreateProgram.password = password;
+        ShowPrograms.id = id;
+        ShowPrograms.firstname = firstname;
+        ShowPrograms.lastname = lastname;
+        ShowPrograms.username = username;
+        ShowPrograms.password = password;
 
-        Intent cpintent = new Intent(this, CreateProgram.class);
-        startActivity(cpintent);
+        Intent spintent = new Intent(this, ShowPrograms.class);
+        startActivity(spintent);
     }
 
     public void startExercises(int id, String firstname, String lastname, String username, String password)
     {
-        CreateProgram.id = id;
-        CreateProgram.firstname = firstname;
-        CreateProgram.lastname = lastname;
-        CreateProgram.username = username;
-        CreateProgram.password = password;
+        Exercises.id = id;
+        Exercises.firstname = firstname;
+        Exercises.lastname = lastname;
+        Exercises.username = username;
+        Exercises.password = password;
 
-        Intent cpintent = new Intent(this, CreateProgram.class);
-        startActivity(cpintent);
+        Intent eintent = new Intent(this, Exercises.class);
+        startActivity(eintent);
     }
 
     public void startTimer(int id, String firstname, String lastname, String username, String password)
     {
-        CreateProgram.id = id;
-        CreateProgram.firstname = firstname;
-        CreateProgram.lastname = lastname;
-        CreateProgram.username = username;
-        CreateProgram.password = password;
+        Timer.id = id;
+        Timer.firstname = firstname;
+        Timer.lastname = lastname;
+        Timer.username = username;
+        Timer.password = password;
 
-        Intent cpintent = new Intent(this, CreateProgram.class);
-        startActivity(cpintent);
+        Intent tintent = new Intent(this, Timer.class);
+        startActivity(tintent);
     }
 }

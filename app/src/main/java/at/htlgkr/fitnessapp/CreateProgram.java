@@ -21,6 +21,13 @@ public class CreateProgram extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_program);
 
+        //-------DEBUG---------
+        System.out.println("MOIS_CP_id_"+id);
+        System.out.println("MOIS_CP_firstname_"+firstname);
+        System.out.println("MOIS_CP_lastname_"+lastname);
+        System.out.println("MOIS_CP_username_"+username);
+        System.out.println("MOIS_CP_password_"+password);
+        //-----DEBUG-End------
 
     }
 }
