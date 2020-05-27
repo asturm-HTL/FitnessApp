@@ -1,10 +1,17 @@
 package at.htlgkr.fitnessapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -47,6 +54,30 @@ public class CreateAccount extends AppCompatActivity
         Button createAccountBtn = findViewById(R.id.createAccountBtn);
         TextView termsOfUseCreateTV = findViewById(R.id.termOfUseCreateTV);
 
+        //------------Terms of Use-------------------------
+
+        String termsOfUseText = "With creating an account you accept our TERMS OF USE";
+        SpannableString spannableString = new SpannableString(termsOfUseText);
+
+        ClickableSpan clickableSpan = new ClickableSpan()
+        {
+            @Override
+            public void onClick(View widget)
+            {
+                startTermsOfUse();
+            }
+        };
+
+        ForegroundColorSpan white = new ForegroundColorSpan(Color.WHITE);
+
+        spannableString.setSpan(clickableSpan, 40, 52, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(white, 40,52, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        termsOfUseCreateTV.setText(spannableString);
+        termsOfUseCreateTV.setMovementMethod(LinkMovementMethod.getInstance());
+
+        //------------Terms of Use End---------------------
+
         createAccountBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -67,6 +98,7 @@ public class CreateAccount extends AppCompatActivity
                         {
                             //TODO -- POST Request und User anlegen
                             startScreenBeforeMain(firstname);
+                            Toast.makeText(CreateAccount.this, "Couldn't make Account because POST doesn't work", Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
@@ -209,13 +241,19 @@ public class CreateAccount extends AppCompatActivity
         }
     }
 
-    //-------------------------------startScreenBeforeMain--------------------------------
+    //-------------------------------startActivitys--------------------------------
 
     public void startScreenBeforeMain(String name)
     {
         ScreenBeforeMain.firstname = name;
         Intent startScreenBeforeMainIntent = new Intent(this, ScreenBeforeMain.class);
         startActivity(startScreenBeforeMainIntent);
+    }
+
+    public void startTermsOfUse()
+    {
+        Intent startTermsOfUse = new Intent(this, TermOfUse.class);
+        startActivity(startTermsOfUse);
     }
 
 

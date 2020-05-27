@@ -116,7 +116,7 @@
             android:id="@+id/termOfUseCreateTV"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
-            android:text="With creating an account you accept our terms of use"
+            android:text="With creating an account you accept our TERMS OF USE"
             android:textColor="#fff"
             android:layout_gravity="center"
             android:layout_marginTop="3dp"
