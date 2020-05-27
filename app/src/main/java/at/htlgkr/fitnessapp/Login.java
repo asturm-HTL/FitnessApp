@@ -270,7 +270,7 @@ public class Login extends AppCompatActivity
 
     public void startScreenAfterLogin(String name)
     {
-        ScreenAfterLogin.username = name;
+        ScreenAfterLogin.firstname = name;
         Intent startScreenAfterLoginIntent = new Intent(this, ScreenAfterLogin.class);
         startActivity(startScreenAfterLoginIntent);
     }

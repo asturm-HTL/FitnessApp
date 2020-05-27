@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -48,11 +49,61 @@ public class MainActivity extends AppCompatActivity
         getExercises(view);
         //addToDo(view);
 
+
+        //-------DEBUG---------
         System.out.println("MOIS_M_id_"+id);
         System.out.println("MOIS_M_firstname_"+firstname);
         System.out.println("MOIS_M_lastname_"+lastname);
         System.out.println("MOIS_M_username_"+username);
         System.out.println("MOIS_M_password_"+password);
+        //--------------------
+
+        Button createProgramBtn = findViewById(R.id.createProgramBtn);
+        Button showProgramsBtn = findViewById(R.id.showProgramsBtn);
+        Button exercisesBtn = findViewById(R.id.exercisesBtn);
+        Button timerBtn = findViewById(R.id.timerBtn);
+
+        //------------------------------onClickListener----------------------------
+
+            //------------------createProgram-------------------
+            createProgramBtn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+
+                }
+            });
+
+            //------------------showPrograms-------------------
+            showProgramsBtn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+
+                }
+            });
+            //--------------------exercises---------------------
+            exercisesBtn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+
+                }
+            });
+            //----------------------timer-----------------------
+            timerBtn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+
+                }
+            });
+
+        //--------------------------onCLickLister-Ende-----------------------------------
 
     }
 
@@ -269,4 +320,53 @@ public class MainActivity extends AppCompatActivity
     }
 
     //-------------------------------------
+
+    //----------------------------startActivityX-------------------------------
+    public void startCreateProgram(int id, String firstname, String lastname, String username, String password)
+    {
+        CreateProgram.id = id;
+        CreateProgram.firstname = firstname;
+        CreateProgram.lastname = lastname;
+        CreateProgram.username = username;
+        CreateProgram.password = password;
+
+        Intent cpintent = new Intent(this, CreateProgram.class);
+        startActivity(cpintent);
+    }
+
+    public void startShowPrograms(int id, String firstname, String lastname, String username, String password)
+    {
+        CreateProgram.id = id;
+        CreateProgram.firstname = firstname;
+        CreateProgram.lastname = lastname;
+        CreateProgram.username = username;
+        CreateProgram.password = password;
+
+        Intent cpintent = new Intent(this, CreateProgram.class);
+        startActivity(cpintent);
+    }
+
+    public void startExercises(int id, String firstname, String lastname, String username, String password)
+    {
+        CreateProgram.id = id;
+        CreateProgram.firstname = firstname;
+        CreateProgram.lastname = lastname;
+        CreateProgram.username = username;
+        CreateProgram.password = password;
+
+        Intent cpintent = new Intent(this, CreateProgram.class);
+        startActivity(cpintent);
+    }
+
+    public void startTimer(int id, String firstname, String lastname, String username, String password)
+    {
+        CreateProgram.id = id;
+        CreateProgram.firstname = firstname;
+        CreateProgram.lastname = lastname;
+        CreateProgram.username = username;
+        CreateProgram.password = password;
+
+        Intent cpintent = new Intent(this, CreateProgram.class);
+        startActivity(cpintent);
+    }
 }

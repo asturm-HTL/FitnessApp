@@ -12,7 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ScreenAfterLogin"></activity>
+        <activity android:name=".Timer"></activity>
+        <activity android:name=".Exercises" />
+        <activity android:name=".ShowPrograms" />
+        <activity android:name=".CreateProgram" />
+        <activity android:name=".ScreenAfterLogin" />
         <activity android:name=".ScreenBeforeMain" />
         <activity android:name=".CreateAccount" />
         <activity android:name=".MainActivity" />
