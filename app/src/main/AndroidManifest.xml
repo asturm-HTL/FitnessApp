@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TermOfUse"></activity>
+        <activity android:name=".TermOfUse" />
         <activity android:name=".Timer" />
         <activity android:name=".Exercises" />
         <activity android:name=".ShowPrograms" />

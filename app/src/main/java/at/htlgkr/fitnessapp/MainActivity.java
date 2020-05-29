@@ -324,9 +324,9 @@ public class MainActivity extends AppCompatActivity
 
     public void addToDo(View view)
     {
-
         MainActivity.ToDoAddTask task = new MainActivity.ToDoAddTask();
         task.execute();
+
 
         try
         {

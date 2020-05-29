@@ -24,11 +24,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class CreateAccount extends AppCompatActivity
 {
@@ -38,6 +49,8 @@ public class CreateAccount extends AppCompatActivity
     public static String username;
     public static String password;
     public static String passwordRepeat;
+
+    public static String responseFromServer;
 
 
     @Override
@@ -96,9 +109,16 @@ public class CreateAccount extends AppCompatActivity
                     {
                         if(password.equals(passwordRepeat))
                         {
-                            //TODO -- POST Request und User anlegen
-                            startScreenBeforeMain(firstname);
-                            Toast.makeText(CreateAccount.this, "Couldn't make Account because POST doesn't work", Toast.LENGTH_SHORT).show();
+                            addUser(v);
+                            if(responseFromServer.contains("code=200"))
+                            {
+                                startScreenBeforeMain(firstname);
+                                Toast.makeText(CreateAccount.this, "Your account has been created!", Toast.LENGTH_LONG).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(CreateAccount.this, "Couldn't create account!", Toast.LENGTH_LONG).show();
+                            }
                         }
                         else
                         {
@@ -240,6 +260,88 @@ public class CreateAccount extends AppCompatActivity
             e.printStackTrace();
         }
     }
+
+    //-------------------------------------------------------POST---------------------------------------------------
+
+    public class AddUser extends AsyncTask<String, Integer, String>
+    {
+
+        private static final String linkURL = "http://www.fitnesscenter-mitter.at/userdata.php";
+
+        @Override
+        protected void onPreExecute()
+        {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values)
+        {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected String doInBackground(String... strings)
+        {
+            OkHttpClient client = new OkHttpClient().newBuilder()
+                    .build();
+            MediaType mediaType = MediaType.parse("application/json");
+            RequestBody body = new MultipartBody.Builder().setType(MultipartBody.FORM)
+                    .addFormDataPart("firstname", firstname)
+                    .addFormDataPart("lastname", lastname)
+                    .addFormDataPart("username", username)
+                    .addFormDataPart("password", password)
+                    .build();
+
+            Request request = new Request.Builder()
+                    .url("http://www.fitnesscenter-mitter.at/userdata.php")
+                    .method("POST", body)
+                    .addHeader("Content-Type", "application/json")
+                    .build();
+
+            try
+            {
+                Response response = client.newCall(request).execute();
+                return response.toString();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s)
+        {
+            super.onPostExecute(s);
+        }
+
+        }
+
+    public void addUser(View view)
+    {
+
+        CreateAccount.AddUser task = new CreateAccount.AddUser();
+        task.execute();
+
+        try
+        {
+            responseFromServer = task.get();
+        }
+        catch (ExecutionException e)
+        {
+            e.printStackTrace();
+        }
+        catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+    //----------------------------------------------------------------------------
 
     //-------------------------------startActivitys--------------------------------
 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/stepcounter"
+            android:icon="@drawable/ic_stepcounter"
+            android:title="Step Counter" />
+
+        <item
+            android:id="@+id/account"
+            android:icon="@drawable/ic_account"
+            android:title="Account" />
+
+    </group>
+
+    <item android:title="Test">
+        <menu>
+            <item
+                android:id="@+id/test1"
+                android:icon="@drawable/ic_stepcounter"
+                android:title="Test 1" />
+            <item
+                android:id="@+id/test2"
+                android:icon="@drawable/ic_stepcounter"
+                android:title="Test 2" />
+        </menu>
+    </item>
+
+
+</menu>
