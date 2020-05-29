@@ -25,6 +25,8 @@ public class ScreenAfterLogin extends AppCompatActivity
 
         welcomeTVAfterLogin.setText("Welcome back,\n" + firstname );
 
+
+
         handler = new Handler();
         handler.postDelayed(new Runnable()
         {

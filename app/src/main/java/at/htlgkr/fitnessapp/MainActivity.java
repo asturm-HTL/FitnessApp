@@ -1,15 +1,21 @@
 package at.htlgkr.fitnessapp;
 
 import androidx.annotation.DrawableRes;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -30,6 +36,8 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity
 {
 
+    private DrawerLayout drawer;
+
     public String exercisesGetRequest;
 
     //-------------Variables which get changed from LoginActivity------------------
@@ -45,6 +53,11 @@ public class MainActivity extends AppCompatActivity
     public  Button showProgramsBtn;
     public  Button exercisesBtn;
     public Button timerBtn;
+    Toolbar toolbar;
+
+    public TextView headerFirstLast;
+    public TextView headerUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -54,6 +67,14 @@ public class MainActivity extends AppCompatActivity
 
         View view = new View(this);
         getExercises(view);
+
+        //-------Drawer---------
+        drawer = findViewById(R.id.drawer_layout);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        //-------Drawer-End---------
 
         //-------DEBUG---------
         System.out.println("MOIS_M_id_"+id);
@@ -116,6 +137,33 @@ public class MainActivity extends AppCompatActivity
 
         //--------------------------onCLickListers-End-----------------------------------
 
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        headerFirstLast = findViewById(R.id.headerFirstnameLastname);
+        headerUser = findViewById(R.id.headerUsername);
+
+
+    }
+
+    public void setnames()
+    {
+        headerFirstLast.setText(firstname + " " + lastname);
+        headerUser.setText(username);
+    }
+
+
+    @Override
+    public void onBackPressed()
+    {
+        if(drawer.isDrawerOpen(GravityCompat.START))
+        {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+        else
+        {
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -129,6 +177,10 @@ public class MainActivity extends AppCompatActivity
         exercisesBtn.setBackgroundResource(R.drawable.exercisesbackground);
         timerBtn.setBackgroundResource(R.drawable.timerbackground);
         //-----------------------setBackground-End-------------------------
+
+       // headerFirstnameLastname.setText(firstname + " " + lastname);
+        // headerUsername.setText(username);
+
     }
 
     //-----------------------------------------GetExercises-----------------------------------------
@@ -236,113 +288,7 @@ public class MainActivity extends AppCompatActivity
     }
     //----------------------------------------GetExercises-End---------------------------------------
 
-    //-----------------POSTTEST-------------------------------- //TODO --- für CreateAccount
 
-    public static String testusername = "testusername";
-    public static String testlastname = "testlastname";
-    public static String testfirstname = "testfirstname";
-    public static String testpassword = "tespassword";
-    public static String userstring;
-
-    public class ToDoAddTask extends AsyncTask<String, Integer, String>
-    {
-
-
-        private static final String linkURL = "http://www.fitnesscenter-mitter.at/userdata.php";
-
-        @Override
-        protected void onPreExecute()
-        {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected void onProgressUpdate(Integer... values)
-        {
-            super.onProgressUpdate(values);
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            Log.d("TAG", "doInBackground: ");
-
-            try
-            {
-                HttpURLConnection connection = (HttpURLConnection) new URL(linkURL + "?firstname="+testfirstname+"&lastname="+testlastname+"&username="+testusername+"&password="+testpassword).openConnection();
-                connection.setRequestMethod("POST");
-                connection.setRequestProperty("Content-Type","application/json");
-                OutputStream os = connection.getOutputStream();
-                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-                writer.write(encodeUserInfos(testfirstname, testlastname, testusername, testpassword));
-                System.out.println("IS_username: " +testusername);
-                System.out.println("IS_password: " +testpassword);
-                System.out.println("IS_firstname: " +testfirstname);
-                System.out.println("IS_lastname: " +testlastname);
-
-                writer.flush();
-                writer.close();
-                os.close();
-
-
-                int responseCode = connection.getResponseCode();
-                Log.d("ResponseMOIS", "ResponseMOIS: " + responseCode);
-                if (responseCode == HttpURLConnection.HTTP_OK)
-                {
-                    BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                    StringBuffer sb = new StringBuffer("");
-                    String line = "";
-                    while((line = br.readLine()) != null)
-                    {
-                        sb.append(line);
-                        break;
-                    }
-                    br.close();
-
-                    return sb.toString();
-                }
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-        }
-
-        private String encodeUserInfos(String... strings)
-        {
-            String s = "{\n " + "\"firstname\": \"" + strings[0] + "\",\n " + "\"lastname\": \""+ strings[1] +"\",\n" + "\"username\" : \""+ strings[2] +"\",\n" + "\"password\" : \""+ strings[3]+"\"\n" + "}";
-            return s;
-
-        }
-    }
-
-    public void addToDo(View view)
-    {
-        MainActivity.ToDoAddTask task = new MainActivity.ToDoAddTask();
-        task.execute();
-
-
-        try
-        {
-            userstring = task.get();
-            System.out.println("MOIS_list_"+userstring);
-
-        }
-        catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    //-------------------------------------
 
     //----------------------------startActivityX-------------------------------
     public void startCreateProgram(int id, String firstname, String lastname, String username, String password)

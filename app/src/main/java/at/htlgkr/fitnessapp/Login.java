@@ -53,12 +53,7 @@ public class Login extends AppCompatActivity
         TextView createAccountTV = findViewById(R.id.createAccountTV);
 
 
-        //------------------usernameET------------------
-
-
-
-        //------------------passwordET------------------
-
+        //------------------header------------------
 
 
         //-------------------loginBTN-------------------
@@ -237,9 +232,12 @@ public class Login extends AppCompatActivity
                     MainActivity.lastname = lastname;
                     MainActivity.username = username;
                     MainActivity.password = password;
+
+
                 }
 
                 startScreenAfterLogin(firstname);
+
             }
             else
             {
