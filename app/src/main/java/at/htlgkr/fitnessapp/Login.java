@@ -232,8 +232,6 @@ public class Login extends AppCompatActivity
                     MainActivity.lastname = lastname;
                     MainActivity.username = username;
                     MainActivity.password = password;
-
-
                 }
 
                 startScreenAfterLogin(firstname);

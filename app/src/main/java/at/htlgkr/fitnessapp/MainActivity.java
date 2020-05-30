@@ -1,10 +1,12 @@
 package at.htlgkr.fitnessapp;
 
 import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.core.widget.TextViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
@@ -17,6 +19,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -55,8 +59,7 @@ public class MainActivity extends AppCompatActivity
     public Button timerBtn;
     Toolbar toolbar;
 
-    public TextView headerFirstLast;
-    public TextView headerUser;
+    NavigationView navview;
 
 
     @Override
@@ -137,21 +140,7 @@ public class MainActivity extends AppCompatActivity
 
         //--------------------------onCLickListers-End-----------------------------------
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        headerFirstLast = findViewById(R.id.headerFirstnameLastname);
-        headerUser = findViewById(R.id.headerUsername);
-
-
     }
-
-    public void setnames()
-    {
-        headerFirstLast.setText(firstname + " " + lastname);
-        headerUser.setText(username);
-    }
-
 
     @Override
     public void onBackPressed()
@@ -178,8 +167,6 @@ public class MainActivity extends AppCompatActivity
         timerBtn.setBackgroundResource(R.drawable.timerbackground);
         //-----------------------setBackground-End-------------------------
 
-       // headerFirstnameLastname.setText(firstname + " " + lastname);
-        // headerUsername.setText(username);
 
     }
 

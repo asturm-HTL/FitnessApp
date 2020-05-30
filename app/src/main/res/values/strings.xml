@@ -10,4 +10,6 @@
 
     <string name="navigation_score_opened">Open navigation drawer</string>
     <string name="navigation_score_closed">Close navigation drawer</string>
+
+    <string name="firstnameLastname"></string>
 </resources>
