@@ -3,31 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/stepcounter"
-            android:icon="@drawable/ic_stepcounter"
-            android:title="Step Counter" />
 
-        <item
-            android:id="@+id/account"
-            android:icon="@drawable/ic_account"
-            android:title="Account" />
+        <group android:checkableBehavior="single">
 
-    </group>
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_home"
+                android:title="Home"
+            />
 
-    <item android:title="Test">
+        </group>
+
+
+    <item android:title="User">
+
         <menu>
-            <item
-                android:id="@+id/test1"
-                android:icon="@drawable/ic_stepcounter"
-                android:title="Test 1" />
-            <item
-                android:id="@+id/test2"
-                android:icon="@drawable/ic_stepcounter"
-                android:title="Test 2" />
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_account"
+                    android:icon="@drawable/ic_account"
+                    android:title="Account"
+                    />
+                <item
+                    android:id="@+id/nav_stepcounter"
+                    android:icon="@drawable/ic_stepcounter"
+                    android:title="Step Counter"
+                />
+
+            </group>
         </menu>
+
+    </item>
+
+    <item android:title="Settings">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings"
+                    android:title="Settings"
+                    />
+            </group>
+        </menu>
+
     </item>
 
 

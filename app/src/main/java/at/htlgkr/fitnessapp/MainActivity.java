@@ -1,6 +1,7 @@
 package at.htlgkr.fitnessapp;
 
 import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,7 +39,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
 
     private DrawerLayout drawer;
@@ -58,6 +60,8 @@ public class MainActivity extends AppCompatActivity
     public  Button exercisesBtn;
     public Button timerBtn;
     Toolbar toolbar;
+
+    public NavigationView navigationView;
 
     NavigationView navview;
 
@@ -140,14 +144,18 @@ public class MainActivity extends AppCompatActivity
 
         //--------------------------onCLickListers-End-----------------------------------
 
+
+        navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
     }
 
     @Override
     public void onBackPressed()
     {
-        if(drawer.isDrawerOpen(GravityCompat.START))
+        if(drawer.isDrawerOpen(GravityCompat.END))
         {
-            drawer.closeDrawer(GravityCompat.START);
+            drawer.closeDrawer(GravityCompat.END);
         }
         else
         {
@@ -167,7 +175,28 @@ public class MainActivity extends AppCompatActivity
         timerBtn.setBackgroundResource(R.drawable.timerbackground);
         //-----------------------setBackground-End-------------------------
 
+        navigationView.setCheckedItem(R.id.nav_home);
 
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
+    {
+
+        switch (menuItem.getItemId())
+        {
+            case R.id.nav_stepcounter:
+                startStepCounter(id, firstname, lastname, username, password);
+                break;
+
+            case R.id.nav_account:
+                startAccount(id, firstname, lastname, username, password);
+                break;
+        }
+
+        drawer.closeDrawer(GravityCompat.END);
+        return true;
     }
 
     //-----------------------------------------GetExercises-----------------------------------------
@@ -324,5 +353,29 @@ public class MainActivity extends AppCompatActivity
 
         Intent tintent = new Intent(this, Timer.class);
         startActivity(tintent);
+    }
+
+    public void startStepCounter(int id, String firstname, String lastname, String username, String password)
+    {
+        StepCounter.id = id;
+        StepCounter.firstname = firstname;
+        StepCounter.lastname = lastname;
+        StepCounter.username = username;
+        StepCounter.password = password;
+
+        Intent scintent = new Intent(this, StepCounter.class);
+        startActivity(scintent);
+    }
+
+    public void startAccount(int id, String firstname, String lastname, String username, String password)
+    {
+        StepCounter.id = id;
+        StepCounter.firstname = firstname;
+        StepCounter.lastname = lastname;
+        StepCounter.username = username;
+        StepCounter.password = password;
+
+        Intent accintent = new Intent(this, Account.class);
+        startActivity(accintent);
     }
 }
