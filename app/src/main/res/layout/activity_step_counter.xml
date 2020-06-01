@@ -4,23 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StepCounter">
+    tools:context=".StepCounter"
+    android:orientation="vertical"
+    android:background="@android:color/black">
 
-    <TextView
-        android:id="@+id/infoTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Steps"
-    />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:gravity="center"
+    >
 
-    <TextView
-        android:id="@+id/stepsTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="0"
-        android:textSize="40dp"
-    />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Today's Steps:"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:gravity="bottom"
+            android:textAlignment="center"
+            android:fontFamily="@font/fredoka_one"
+
+        />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+    >
+
+        <ProgressBar
+            android:id="@+id/stepprogress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/circle_shape"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circle_progress_bar"
+            android:textAlignment="center"
+        />
+
+        <TextView
+            android:id="@+id/actualStepsTV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Steps"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="60dp"
+
+            />
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        >
+
+
+
+    </FrameLayout>
     
 
 </LinearLayout>

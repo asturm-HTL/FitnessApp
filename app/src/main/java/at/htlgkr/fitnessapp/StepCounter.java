@@ -3,11 +3,16 @@ package at.htlgkr.fitnessapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,14 +27,19 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
     public static String lastname;
     public static String username;
     public static String password;
+    //-----------------------------------------------------------
 
-    //---------------------------------------------------
-
+    //------------------General Variables------------------------
     SensorManager sensorManager;
-
-    TextView stepsTV;
-
     boolean running = false;
+    public static int targetSteps;
+    public static int actualSteps;
+    //------------------------------------------------------------
+
+    //--------------------Layout Variables------------------------
+    private ProgressBar progressBar;
+    private TextView actualStepsTV;
+    //------------------------------------------------------------
 
 
     @Override
@@ -38,16 +48,26 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_counter);
 
-        stepsTV = findViewById(R.id.stepsTV);
+        targetSteps = Settings.targetSteps;
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        progressBar=findViewById(R.id.stepprogress);
+
+        actualStepsTV = findViewById(R.id.actualStepsTV);
+        progressBar.setMax(targetSteps);
+        progressBar.setProgress(actualSteps);
+
+        actualStepsTV.setText(String.valueOf(actualSteps));
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume()
+    {
         super.onResume();
+
         running = true;
         Sensor countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+
         if(countSensor != null)
         {
             sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
@@ -64,8 +84,6 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
         super.onPause();
 
         running = false;
-        //if unregistered, the hardware will stop count the steps
-        //sensorManager.unregisterListener(this);
     }
 
     @Override
@@ -74,7 +92,7 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
 
         if(running)
         {
-            stepsTV.setText(String.valueOf((event.values[0])));
+            actualSteps = (int) event.values[0];
         }
 
     }
