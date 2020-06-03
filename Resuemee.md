@@ -1,20 +1,21 @@
 # Resümee
 
 ## Was ist gut gelaufen?
-* GET-Request haben problemlos funktioniert.
-* Animationen für Login und CreateAccount funktionieren.
-* User-Daten Verwaltung nach Login funktioniert wie erwartet.
+* Step-Counter (Auf echtem Smartphone, da AVD kden benötigten Sensor nicht besitzt)
+* Bilder von Website auf die App laden 
+* POST-Request funktioniert nun
 
 ## Welche Arbeitspakete wurden erledigt?
-* Das eingeplante Arbeitspaket: Arbeitspaket 1
-* Teils auch bereits Arbeitspaket 2
+* Das eingeplante Arbeitspaket: Arbeitspaket 2
+* Teils auch bereits Arbeitspaket 3
 
 ## Welche Probleme sind aufgetreten?
-* POST-Request funktioniert nicht mit Json. 'Postman-Request' funktioniert jedoch. Wie umändern in PHP?
-* User-Daten verwalten: alle benötigten User-Daten aus dem String auslesen funktionierte vorerst nicht wie geplant, Problem jedoch gelöst!
+* Navigation Drawer anfangs problematisch
 
 ## Wie liegt die Gruppe im Zeitplan?
-* Sehr gut, bereits am erledigen von Arbeitspaket 2
+* Sehr gut, bereits am erledigen von Arbeitspaket 3
 
 ## Was wird nächste Woche umgesetzt?
-* MainActivity: Design entwerfen, Animationen hinzufügen und die Logik der MainActivity programmieren
+* Designs und Animationen und die grundsätzliche Funktionalität von Timer, Trainingsplan erstellen,...
+* Unterschiedliche Layouts für Smartphone, Tablet bei bereits erledigten Screens
+
