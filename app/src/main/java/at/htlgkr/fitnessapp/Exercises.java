@@ -6,7 +6,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -38,7 +41,14 @@ public class Exercises extends AppCompatActivity
 
     public List imglinks = new ArrayList();
     public List exBeforeSplit = new ArrayList();
-    public ImageView imageViewTest;
+    //public ImageView imageViewTest;
+
+    //-----------------------------------
+
+    private ArrayList<MuscleAnatomy>muscleAnatomyList;
+    private MuscleAdapter muscleAdapter;
+
+    //-----------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -47,7 +57,7 @@ public class Exercises extends AppCompatActivity
         setContentView(R.layout.activity_exercises);
         View view = new View(this);
 
-        imageViewTest = findViewById(R.id.imageViewTest);
+        //imageViewTest = findViewById(R.id.imageViewTest);
 
         //-------DEBUG---------
         System.out.println("MOIS_C_id_"+id);
@@ -60,7 +70,42 @@ public class Exercises extends AppCompatActivity
 
         getExercises(view);
 
+        initList();
+
+        Spinner spinnerMuscles = findViewById(R.id.spinnerAnatomy);
+
+        muscleAdapter = new MuscleAdapter(this, muscleAnatomyList);
+        spinnerMuscles.setAdapter(muscleAdapter);
+
+        spinnerMuscles.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                Toast.makeText(Exercises.this, "Penis", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
     }
+
+
+    private  void initList()
+    {
+        muscleAnatomyList = new ArrayList<>();
+        muscleAnatomyList.add(new MuscleAnatomy("Chest", R.drawable.chestanatomy));
+        muscleAnatomyList.add(new MuscleAnatomy("Back", R.drawable.backanatomy));
+        muscleAnatomyList.add(new MuscleAnatomy("Quads", R.drawable.quadsanatomy));
+        muscleAnatomyList.add(new MuscleAnatomy("Hamstrings", R.drawable.hamstringsanatomy));
+        muscleAnatomyList.add(new MuscleAnatomy("Booty", R.drawable.bootyanatomy));
+        muscleAnatomyList.add(new MuscleAnatomy("Calves", R.drawable.calfanatomy));
+
+    }
+
 
     //-----------------------------------------GetExercises-----------------------------------------
 
@@ -183,7 +228,7 @@ public class Exercises extends AppCompatActivity
             }
 
                 //pictures get loaded after register
-            Picasso.get().load("http://www.fitnesscenter-mitter.at/img/FitnessApp/" + imglinks.get(191) + ".png").into(imageViewTest);
+           // Picasso.get().load("http://www.fitnesscenter-mitter.at/img/FitnessApp/" + imglinks.get(191) + ".png").into(imageViewTest);
 //TODO--.jpgs umdoa
 
         }
