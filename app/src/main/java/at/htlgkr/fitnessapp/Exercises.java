@@ -6,6 +6,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,7 +38,7 @@ public class Exercises extends AppCompatActivity
 
     public List imglinks = new ArrayList();
     public List exBeforeSplit = new ArrayList();
-
+    public ImageView imageViewTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,6 +46,8 @@ public class Exercises extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercises);
         View view = new View(this);
+
+        imageViewTest = findViewById(R.id.imageViewTest);
 
         //-------DEBUG---------
         System.out.println("MOIS_C_id_"+id);
@@ -54,6 +59,7 @@ public class Exercises extends AppCompatActivity
 
 
         getExercises(view);
+
     }
 
     //-----------------------------------------GetExercises-----------------------------------------
@@ -160,11 +166,26 @@ public class Exercises extends AppCompatActivity
                 String[] exparts2 = exBeforeSplit.get(j).toString().split(",\"");
                 for(int x = 0; x < exparts2.length; x++)
                 {
-                    System.out.println("EXPARTS_["+x+"]" + exparts2[x].toString());
+
+
+                    if(x == 5)
+                    {
+                        imglinks.add(exparts2[x].toString().replace("imglink", "").replace("\"", "").replace(":", "").replace("}", ""));
+                    }
                 }
             }
 
-            System.out.println("MOIS_Exercises_: " + exercisesGetRequest);
+            for(int f = 0; f < imglinks.size(); f++)
+            {
+
+                System.out.println("BEEN_" +f + "_" + imglinks.get(f).toString());
+
+            }
+
+                //pictures get loaded after register
+            Picasso.get().load("http://www.fitnesscenter-mitter.at/img/FitnessApp/" + imglinks.get(191) + ".png").into(imageViewTest);
+//TODO--.jpgs umdoa
+
         }
         catch (ExecutionException e)
         {

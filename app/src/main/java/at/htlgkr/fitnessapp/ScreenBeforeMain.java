@@ -3,10 +3,15 @@ package at.htlgkr.fitnessapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 
 
 public class ScreenBeforeMain extends AppCompatActivity
@@ -38,6 +43,12 @@ public class ScreenBeforeMain extends AppCompatActivity
                 finish(); //Closes when 'Back'
             }
         }, SCREENBEFOREMAIN);
+
+
+
+
+
     }
+
     }
 
