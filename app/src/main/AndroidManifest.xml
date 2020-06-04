@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Settings"></activity>
+        <activity android:name=".ExercisesAdvancedView"></activity>
+        <activity android:name=".ExercisesStandardView" />
+        <activity android:name=".Settings" />
         <activity android:name=".Account" />
         <activity android:name=".StepCounter" />
         <activity android:name=".TermOfUse" />

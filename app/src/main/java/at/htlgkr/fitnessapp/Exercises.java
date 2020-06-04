@@ -2,6 +2,7 @@ package at.htlgkr.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -45,10 +47,9 @@ public class Exercises extends AppCompatActivity
 
     //-----------------------------------
 
-    private ArrayList<MuscleAnatomy>muscleAnatomyList;
-    private MuscleAdapter muscleAdapter;
+    public TextView standardSearch;
+    public TextView advancedSearch;
 
-    //-----------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -70,41 +71,35 @@ public class Exercises extends AppCompatActivity
 
         getExercises(view);
 
-        initList();
+        standardSearch = findViewById(R.id.standardSearch);
+        advancedSearch = findViewById(R.id.advancedSearch);
 
-        Spinner spinnerMuscles = findViewById(R.id.spinnerAnatomy);
-
-        muscleAdapter = new MuscleAdapter(this, muscleAnatomyList);
-        spinnerMuscles.setAdapter(muscleAdapter);
-
-        spinnerMuscles.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        //------------openStandardSearch------------------------
+        standardSearch.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            public void onClick(View v)
             {
-                Toast.makeText(Exercises.this, "Penis", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-
+                Intent standardIntent = new Intent(Exercises.this, ExercisesStandardView.class);
+                startActivity(standardIntent);
             }
         });
+        //------------openStandardSearch-End--------------------
+
+        //------------openAdvnacedSearch------------------------
+        advancedSearch.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent advancedIntent = new Intent(Exercises.this, ExercisesAdvancedView.class);
+                startActivity(advancedIntent);
+            }
+        });
+        //------------openAdvancedSearch-End--------------------
+
     }
 
-
-    private  void initList()
-    {
-        muscleAnatomyList = new ArrayList<>();
-        muscleAnatomyList.add(new MuscleAnatomy("Chest", R.drawable.chestanatomy));
-        muscleAnatomyList.add(new MuscleAnatomy("Back", R.drawable.backanatomy));
-        muscleAnatomyList.add(new MuscleAnatomy("Quads", R.drawable.quadsanatomy));
-        muscleAnatomyList.add(new MuscleAnatomy("Hamstrings", R.drawable.hamstringsanatomy));
-        muscleAnatomyList.add(new MuscleAnatomy("Booty", R.drawable.bootyanatomy));
-        muscleAnatomyList.add(new MuscleAnatomy("Calves", R.drawable.calfanatomy));
-
-    }
 
 
     //-----------------------------------------GetExercises-----------------------------------------
