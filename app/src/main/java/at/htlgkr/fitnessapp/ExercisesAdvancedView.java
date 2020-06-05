@@ -5,16 +5,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExercisesAdvancedView extends AppCompatActivity
 {
 
     private ArrayList<MuscleAnatomy> muscleAnatomyList;
     private MuscleAdapter muscleAdapter;
+    public ListView listViewAdvanced;
+    public ArrayList exercisesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,8 +27,18 @@ public class ExercisesAdvancedView extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercises_advanced_view);
 
-        initList();
+        exercisesList = new ArrayList();
 
+        initList();
+        listViewAdvanced = findViewById(R.id.listViewAdvanced);
+        ListviewAdapter arradapt = new ListviewAdapter(this, R.layout.listview_row, exercisesList);
+
+        listViewAdvanced.setAdapter(arradapt);
+
+                exercisesList.add("Test");
+                exercisesList.add("Test2");
+                exercisesList.add("Test3");
+                exercisesList.add("Test4");
         Spinner spinnerMuscles = findViewById(R.id.spinnerAnatomy);
 
         muscleAdapter = new MuscleAdapter(this, muscleAnatomyList);
