@@ -41,7 +41,9 @@ public class ExercisesAdvancedView extends AppCompatActivity
     public List imglinks = new ArrayList();
     public List exBeforeSplit = new ArrayList();
     public ArrayList exercises = new ArrayList();
+    public ArrayList target = new ArrayList();
     //public ImageView imageViewTest;
+    public MuscleAnatomy muscleAnatomyClicked;
 
     //-----------------------------------
 
@@ -65,20 +67,304 @@ public class ExercisesAdvancedView extends AppCompatActivity
         arradapt = new ListviewAdapter(this, R.layout.listview_row, exercisesList);
 
         listViewAdvanced.setAdapter(arradapt);
-
         Spinner spinnerMuscles = findViewById(R.id.spinnerAnatomy);
+
+        View view = new View(this);
+        getExercises(view);
 
         muscleAdapter = new MuscleAdapter(this, muscleAnatomyList);
         spinnerMuscles.setAdapter(muscleAdapter);
+
+        while(exercisesList == null)
+        {
+            System.out.println("null");
+        }
 
         spinnerMuscles.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
             {
-                MuscleAnatomy muscleAnatomyClicked = (MuscleAnatomy) parent.getItemAtPosition(position);
+                muscleAnatomyClicked = (MuscleAnatomy) parent.getItemAtPosition(position);
                 String clickedMuscleName = muscleAnatomyClicked.getMuscleName();
                 Toast.makeText(ExercisesAdvancedView.this, clickedMuscleName +" selected", Toast.LENGTH_SHORT).show();
+
+                if(clickedMuscleName.equals("Chest"))
+                {
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Chest"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Lower Chest"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Lower Chest"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Upper Chest"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Upper Chest"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Back"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Back"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Anterior Shoulder"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Anterior Shoulder"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Lateral Shoulder"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Lateral Shoulder"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Posterior Shoulder"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Posterior Shoulder"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Neck"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Neck"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Lower Back"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Lower Back"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Quads"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Quads"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Abductors"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Abductors"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Adductors"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Adductors"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Hamstrings"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Hamstrings"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Booty"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Booty"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Calves"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Calf"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Sixpack"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Sixpack"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Obliques"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Obliques"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Biceps"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Biceps"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Triceps"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Triceps"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else if (clickedMuscleName.equals("Forearms"))
+                {
+                    exercisesList.clear();
+                    for(int b = 0; b < exercises.size(); b++)
+                    {
+                        if(target.get(b).toString().contains("Forearm"))
+                        {
+                            exercisesList.add(exercises.get(b));
+                            arradapt.notifyDataSetChanged();
+                        }
+
+                    }
+                }
+                else
+                {
+                    exercisesList.clear();
+                    arradapt.notifyDataSetChanged();
+                }
+
+
+                /*for(int b = 0; b < exercises.size(); b++)
+                {
+                    if(clickedMuscleName.equals(target.get(b).toString()))
+                    {
+                        System.out.println("BEENX_" + b + "_" + target.get(b).toString());
+                        exercisesList.add(exercises.get(b));
+                    }
+
+
+                }*/
             }
 
             @Override
@@ -88,8 +374,13 @@ public class ExercisesAdvancedView extends AppCompatActivity
             }
         });
 
-        View view = new View(this);
-        getExercises(view);
+
+
+
+
+
+
+
     }
 
     private  void initList()
@@ -231,6 +522,10 @@ public class ExercisesAdvancedView extends AppCompatActivity
                     {
                         exercises.add(exparts2[x].toString().replace("name", "").replace("\"", "").replace(":", "").replace("}", ""));
                     }
+                    if(x == 3)
+                    {
+                        target.add(exparts2[x].toString().replace("target", "").replace("\"", "").replace(":", "").replace("}", ""));
+                    }
                     if(x == 5)
                     {
                         imglinks.add(exparts2[x].toString().replace("imglink", "").replace("\"", "").replace(":", "").replace("}", ""));
@@ -245,13 +540,6 @@ public class ExercisesAdvancedView extends AppCompatActivity
 
             }
 
-            for(int b = 0; b < exercises.size(); b++)
-            {
-
-                System.out.println("BEENX_" +b + "_" + exercises.get(b).toString());
-                exercisesList.add(exercises.get(b));
-
-            }
 
 
 
