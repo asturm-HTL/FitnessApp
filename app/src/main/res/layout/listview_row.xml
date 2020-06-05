@@ -13,7 +13,7 @@
         android:textSize="24sp"
         android:textColor="#fff"
         android:fontFamily="@font/fredoka_one"
-        android:padding="5dp"
+        android:padding="10dp"
         android:background="@drawable/listview_row_design"
     />
 
