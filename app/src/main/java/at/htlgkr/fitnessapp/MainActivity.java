@@ -351,7 +351,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Timer.username = username;
         Timer.password = password;
 
-        Intent tintent = new Intent(this, Timer.class);
+        Intent tintent = new Intent(this, ActivityBeforeTimer.class);
         startActivity(tintent);
     }
 

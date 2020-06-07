@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ExercisesAdvancedView"></activity>
+        <activity android:name=".ActivityBeforeTimer"></activity>
+        <activity android:name=".ExercisesAdvancedView" />
         <activity android:name=".ExercisesStandardView" />
         <activity android:name=".Settings" />
         <activity android:name=".Account" />
