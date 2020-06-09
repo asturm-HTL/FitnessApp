@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,8 @@ public class Timer extends AppCompatActivity
     private Button mButtonStartPause;
     private Button mButtonReset;
 
+    ProgressBar progressBar;
+
     private CountDownTimer mCountDownTimer;
     private boolean mTimerRunning;
 
@@ -54,6 +57,7 @@ public class Timer extends AppCompatActivity
         mTextViewCountdown = findViewById(R.id.text_view_countdown);
         mButtonStartPause = findViewById(R.id.button_start_pause);
 
+        progressBar = findViewById(R.id.workpauseprogress);
 
         updateCountDownText();
 
@@ -72,6 +76,7 @@ public class Timer extends AppCompatActivity
             }
         });
 
+        progressBar.setMax((int) mTimeLeftInMillis);
     }
 
     private void startTimer()
@@ -82,7 +87,10 @@ public class Timer extends AppCompatActivity
             public void onTick(long millisUntilFinished)
             {
                 mTimeLeftInMillis = millisUntilFinished;
+                progressBar.setMax((int)START_TIME_IN_MILLIS);
+                progressBar.setProgress((int)START_TIME_IN_MILLIS+1000 - (int) mTimeLeftInMillis);
                 updateCountDownText();
+
             }
 
             @Override
@@ -138,6 +146,8 @@ public class Timer extends AppCompatActivity
             {
                 mTimePauseLeftInMillis = millisUntilFinished;
                 updatePauseText();
+                progressBar.setMax((int)PAUSE_TIMER_IN_MILLIS);
+                progressBar.setProgress((int)PAUSE_TIMER_IN_MILLIS + 1000 - (int) mTimePauseLeftInMillis);
             }
 
             @Override
