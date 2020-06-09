@@ -1,21 +1,20 @@
 # Resümee
 
 ## Was ist gut gelaufen?
-* Step-Counter (Auf echtem Smartphone, da AVD kden benötigten Sensor nicht besitzt)
-* Bilder von Website auf die App laden 
-* POST-Request funktioniert nun
+* Timer funktioniert wie gewollt (zuerst Work dann Pause)
+* Anzeige der richtigen Übungen bei Auswahl der Muskelgruppe
 
 ## Welche Arbeitspakete wurden erledigt?
-* Das eingeplante Arbeitspaket: Arbeitspaket 2
-* Teils auch bereits Arbeitspaket 3
+* Fast ganzes, eingeplantes, Arbeitspaket 4
 
 ## Welche Probleme sind aufgetreten?
-* Navigation Drawer anfangs problematisch
+* Zeitprobleme, Übungen lassen sich noch nicht im Detail anzeigen anzeigen
 
 ## Wie liegt die Gruppe im Zeitplan?
-* Sehr gut, bereits am erledigen von Arbeitspaket 3
+* Mittelmäßig
 
 ## Was wird nächste Woche umgesetzt?
-* Designs und Animationen und die grundsätzliche Funktionalität von Timer, Trainingsplan erstellen,...
-* Unterschiedliche Layouts für Smartphone, Tablet bei bereits erledigten Screens
+* Übungen im Detail anzeigen
+* Trainingspläne erstellen, anzeigen
+* Fragments und Unterschiedliche Layouts
 
