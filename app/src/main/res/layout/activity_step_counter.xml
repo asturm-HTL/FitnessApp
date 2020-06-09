@@ -24,7 +24,6 @@
             android:gravity="bottom"
             android:textAlignment="center"
             android:fontFamily="@font/fredoka_one"
-
         />
 
     </FrameLayout>
@@ -58,14 +57,15 @@
             android:fontFamily="@font/fredoka_one"
             android:textSize="60dp"
 
-            />
+        />
 
     </FrameLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
-        >
+    >
 
 
 

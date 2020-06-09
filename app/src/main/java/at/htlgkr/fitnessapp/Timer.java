@@ -23,9 +23,9 @@ public class Timer extends AppCompatActivity
 
     //---------------------------MainVariables-End-----------------------------
 
-    public static long START_TIME_IN_MILLIS = 6000;
-    public static int NUMBER_OF_ROUNDS = 2;
-    public static int PAUSE_TIMER_IN_MILLIS = 3000;
+    public static long START_TIME_IN_MILLIS;
+    public static int NUMBER_OF_ROUNDS;
+    public static int PAUSE_TIMER_IN_MILLIS;
     public int counter = 0;
     private TextView mTextViewCountdown;
     private Button mButtonStartPause;
@@ -99,6 +99,7 @@ public class Timer extends AppCompatActivity
                         mTimerRunning = false;
                         mTimePauseLeftInMillis = PAUSE_TIMER_IN_MILLIS;
                         mTimeLeftInMillis = START_TIME_IN_MILLIS;
+                        counter = 0;
                     }
             }
         }.start();
@@ -106,25 +107,6 @@ public class Timer extends AppCompatActivity
         mTimerRunning = true;
 
     }
-
-    private void pauseTimer()
-    {
-        mCountDownTimer.cancel();
-        mTimerRunning = false;
-        mButtonStartPause.setText("Start");
-        mButtonReset.setVisibility(View.VISIBLE);
-    }
-
-    private void resetTimer()
-    {
-        mTimeLeftInMillis = START_TIME_IN_MILLIS;
-        mTimePauseLeftInMillis = PAUSE_TIMER_IN_MILLIS;
-        updateCountDownText();
-        mButtonReset.setVisibility(View.INVISIBLE);
-        mButtonStartPause.setVisibility(View.VISIBLE);
-    }
-
-
 
     private void updateCountDownText()
     {
@@ -166,10 +148,5 @@ public class Timer extends AppCompatActivity
             }
         }.start();
     }
-
-
-
-
-
 }
 

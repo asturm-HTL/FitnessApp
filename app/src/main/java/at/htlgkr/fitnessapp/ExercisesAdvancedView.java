@@ -87,7 +87,7 @@ public class ExercisesAdvancedView extends AppCompatActivity
             {
                 muscleAnatomyClicked = (MuscleAnatomy) parent.getItemAtPosition(position);
                 String clickedMuscleName = muscleAnatomyClicked.getMuscleName();
-                Toast.makeText(ExercisesAdvancedView.this, clickedMuscleName +" selected", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ExercisesAdvancedView.this, clickedMuscleName +" selected", Toast.LENGTH_SHORT).show();
 
                 if(clickedMuscleName.equals("Chest"))
                 {
