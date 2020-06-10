@@ -32,6 +32,8 @@ public class Timer extends AppCompatActivity
     private Button mButtonStartPause;
     private Button mButtonReset;
 
+    private TextView actualStatus;
+
     ProgressBar progressBar;
 
     private CountDownTimer mCountDownTimer;
@@ -54,6 +56,8 @@ public class Timer extends AppCompatActivity
         System.out.println("MOIS_T_password_"+password);
         //-----DEBUG-End------
 
+        actualStatus = findViewById(R.id.actualStatusTV);
+
         mTextViewCountdown = findViewById(R.id.text_view_countdown);
         mButtonStartPause = findViewById(R.id.button_start_pause);
 
@@ -71,7 +75,18 @@ public class Timer extends AppCompatActivity
                     {
                         startTimer();
                     }
-
+                    else
+                    {
+                        mCountDownTimer.cancel();
+                        mTimerRunning = false;
+                        mTimePauseLeftInMillis = PAUSE_TIMER_IN_MILLIS;
+                        mTimeLeftInMillis = START_TIME_IN_MILLIS;
+                        counter = 0;
+                        actualStatus.setText("Stopped");
+                        mButtonStartPause.setText("Start");
+                        progressBar.setProgress(0);
+                        updateCountDownText();
+                    }
 
             }
         });
@@ -90,7 +105,8 @@ public class Timer extends AppCompatActivity
                 progressBar.setMax((int)START_TIME_IN_MILLIS);
                 progressBar.setProgress((int)START_TIME_IN_MILLIS+1000 - (int) mTimeLeftInMillis);
                 updateCountDownText();
-
+                actualStatus.setText("Work");
+                mButtonStartPause.setText("Stop");
             }
 
             @Override
@@ -108,6 +124,8 @@ public class Timer extends AppCompatActivity
                         mTimePauseLeftInMillis = PAUSE_TIMER_IN_MILLIS;
                         mTimeLeftInMillis = START_TIME_IN_MILLIS;
                         counter = 0;
+                        actualStatus.setText("Done");
+                        mButtonStartPause.setText("Start");
                     }
             }
         }.start();
@@ -148,6 +166,7 @@ public class Timer extends AppCompatActivity
                 updatePauseText();
                 progressBar.setMax((int)PAUSE_TIMER_IN_MILLIS);
                 progressBar.setProgress((int)PAUSE_TIMER_IN_MILLIS + 1000 - (int) mTimePauseLeftInMillis);
+                actualStatus.setText("Pause");
             }
 
             @Override

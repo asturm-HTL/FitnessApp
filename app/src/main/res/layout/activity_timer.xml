@@ -17,15 +17,33 @@ android:background="@android:color/black">
     >
 
     <TextView
+        android:id="@+id/tvTimer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Timer"
         android:textColor="#fff"
-        android:textSize="50dp"
-        android:gravity="bottom"
+        android:textSize="70dp"
+        android:gravity="top"
+        android:paddingTop="17dp"
         android:textAlignment="center"
         android:fontFamily="@font/fredoka_one"
         />
+
+    <TextView
+        android:id="@+id/actualStatusTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#fff"
+        android:textSize="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="110dp"
+        android:paddingTop="10dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/fredoka_one"
+    />
+
+
 
 </FrameLayout>
 
