@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.chrisbanes.photoview.PhotoView;
 import com.squareup.picasso.Picasso;
 
 public class ExerciseInDetail extends AppCompatActivity
@@ -21,7 +22,7 @@ public class ExerciseInDetail extends AppCompatActivity
     public String exerciseName;
     public String exerciseImgLink;
 
-    public ImageView exerciseImageView;
+    public PhotoView exerciseImageView;
     public TextView tvExerciseName;
     public TextView tvTargetMuscle;
     public TextView tvTargetMuscleToEdit;
@@ -38,7 +39,7 @@ public class ExerciseInDetail extends AppCompatActivity
 
         String[] split1 = exerciseStringToSplit.split(",\"");
 
-        exerciseImageView = findViewById(R.id.exerciseImageView);
+        exerciseImageView = (PhotoView) findViewById(R.id.exerciseImageView);
         tvExerciseName = findViewById(R.id.tvExerciseName);
         tvTargetMuscle = findViewById(R.id.tvTargetMuscle);
         tvTargetMuscleToEdit = findViewById(R.id.tvTargetMuscleToEdit);
@@ -84,6 +85,9 @@ public class ExerciseInDetail extends AppCompatActivity
                 String[] splitimglink = split1[5].split(":");
                 String imlinkString = splitimglink[1].replace("\"", "").replace("}", "");
                 Picasso.get().load("http://www.fitnesscenter-mitter.at/img/FitnessApp/" + imlinkString + ".png").into(exerciseImageView);
+               // exerciseImageView.setImageResource(R.drawable.abductorsanatomy);
+
+
             }
         }
     }
