@@ -71,8 +71,13 @@ public class ExerciseInDetail extends AppCompatActivity
                 String[] splitexplanationandtips = split1[4].split(";Comments and tips:");
                 String explanationString = splitexplanationandtips[0].replace("explanation\":\"", "");
                 String commentsandtipsString = splitexplanationandtips[1];
-                tvExplanationToEdit.setText(explanationString);
-                tvCommentsAndTipsToEdit.setText(commentsandtipsString);
+
+                String[] explanationsplit1 = explanationString.split(":");
+                String[] splitExecution = explanationsplit1[1].split(";Execution");
+                String explanationendString = explanationsplit1[0]+ ":\n-"+splitExecution[0].replace(";", "\n-") + "\n\nExecution:\n-" + explanationsplit1[2].replace(";", "\n-");
+
+                tvExplanationToEdit.setText(explanationendString);
+                tvCommentsAndTipsToEdit.setText("-" + commentsandtipsString.replace(";", "\n-"));
             }
             if(i == 5)
             {

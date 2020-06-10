@@ -29,6 +29,7 @@
             android:fontFamily="@font/fredoka_one"
             android:textSize="35sp"
             android:textAlignment="center"
+            android:padding="20dp"
             />
 
         <ImageView
@@ -49,6 +50,10 @@
             android:textColor="#fff"
             android:fontFamily="@font/fredoka_one"
             android:textSize="25sp"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
         />
 
         <TextView
@@ -60,6 +65,8 @@
             android:textColor="#fff"
             android:fontFamily="@font/fredoka_one"
             android:textSize="17sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             />
 
         <TextView
@@ -71,7 +78,10 @@
             android:textColor="#fff"
             android:fontFamily="@font/fredoka_one"
             android:textSize="25sp"
-
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
         />
 
         <TextView
@@ -83,6 +93,8 @@
             android:textColor="#fff"
             android:fontFamily="@font/fredoka_one"
             android:textSize="17sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
 
             />
 
@@ -95,6 +107,10 @@
             android:textColor="#fff"
             android:fontFamily="@font/fredoka_one"
             android:textSize="25sp"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
         />
 
         <TextView
@@ -106,6 +122,8 @@
             android:textColor="#fff"
             android:fontFamily="@font/fredoka_one"
             android:textSize="17sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
         />
 
 
