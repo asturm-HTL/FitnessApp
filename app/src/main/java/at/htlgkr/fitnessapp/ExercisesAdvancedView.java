@@ -2,6 +2,7 @@ package at.htlgkr.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -79,6 +80,8 @@ public class ExercisesAdvancedView extends AppCompatActivity
         {
             System.out.println("null");
         }
+
+
 
         spinnerMuscles.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -375,7 +378,21 @@ public class ExercisesAdvancedView extends AppCompatActivity
         });
 
 
-
+        listViewAdvanced.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                for(int n = 0; n < exBeforeSplit.size(); n++)
+                {
+                    if((exBeforeSplit.get(n).toString().contains(listViewAdvanced.getItemAtPosition(position).toString())))
+                    {
+                        //Toast.makeText(ExercisesAdvancedView.this, exBeforeSplit.get(n).toString(), Toast.LENGTH_SHORT).show();
+                        startExerciseDetailed(exBeforeSplit.get(n).toString());
+                    }
+                }
+            }
+        });
 
 
 
@@ -515,6 +532,9 @@ public class ExercisesAdvancedView extends AppCompatActivity
             for(int j = 0; j<exBeforeSplit.size(); j++)
             {
                 String[] exparts2 = exBeforeSplit.get(j).toString().split(",\"");
+
+                System.out.println("exbeforeSplit_" + exBeforeSplit.get(j).toString());
+
                 for(int x = 0; x < exparts2.length; x++)
                 {
 
@@ -540,13 +560,6 @@ public class ExercisesAdvancedView extends AppCompatActivity
 
             }
 
-
-
-
-            //pictures get loaded after register
-            // Picasso.get().load("http://www.fitnesscenter-mitter.at/img/FitnessApp/" + imglinks.get(191) + ".png").into(imageViewTest);
-            //TODO--.jpgs umdoa
-
         }
         catch (ExecutionException e)
         {
@@ -558,5 +571,12 @@ public class ExercisesAdvancedView extends AppCompatActivity
         }
     }
     //----------------------------------------GetExercises-End---------------------------------------
+
+    public void startExerciseDetailed(String exerciseString)
+    {
+        Intent edintent = new Intent(ExercisesAdvancedView.this, ExerciseInDetail.class);
+        ExerciseInDetail.exerciseStringToSplit = exerciseString;
+        startActivity(edintent);
+    }
 
 }
