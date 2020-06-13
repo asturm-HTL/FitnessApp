@@ -1,8 +1,13 @@
 package at.htlgkr.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -69,16 +74,47 @@ public class ShowSingleProgram extends AppCompatActivity {
     public static String fullbodyexercise1reps = null;
 
     public ArrayList beforeSplitList = new ArrayList();
+    public ArrayList orderdExercises = new ArrayList();
+    public ArrayList orderdSets = new ArrayList();
+    public ArrayList orderdReps = new ArrayList();
+
+
+    /*
+    public ListView exercisesLV;
+    public ListView setsLV;
+    public ListView repsLV;
+
+    public ArrayAdapter exAdapt;
+    public ArrayAdapter seAdapt;
+    public ArrayAdapter reAdapt;
+
+    public ListView exercisesLVPush;
+    public ListView setsLVPush;
+    public ListView repsLVPush;
+
+    public ArrayAdapter exAdaptPush;
+    public ArrayAdapter seAdaptPush;
+    public ArrayAdapter reAdaptPush;
+    */
+
+    RecyclerView recyclerViewTest;
+
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_single_program);
 
         System.out.println("PENIS_SSP_" + pullone + " " + pulltwo + " " + pushone + " " + pushtwo + " " + legsone + " " + legstwo);
 
         initLists();
+
+        recyclerViewTest = findViewById(R.id.recyclerviewtest);
+        RecyclerViewAdapter rvadapt = new RecyclerViewAdapter(this, orderdExercises, orderdSets, orderdReps);
+        recyclerViewTest.setAdapter(rvadapt);
+        recyclerViewTest.setLayoutManager(new LinearLayoutManager(this));
     }
 
     public void initLists()
@@ -267,8 +303,59 @@ public class ShowSingleProgram extends AppCompatActivity {
         }
     }
 
-    //-----TODO----implement 4 2 and 1 times a week
+    /*
+        exercisesLV = findViewById(R.id.exercisesSSP);
+        setsLV = findViewById(R.id.setsSSP);
+        repsLV = findViewById(R.id.repsSSP);
+        exAdapt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdExercises);
+        seAdapt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdSets);
+        reAdapt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdReps);
 
+        exercisesLV.setAdapter(exAdapt);
+        setsLV.setAdapter(seAdapt);
+        repsLV.setAdapter(reAdapt);
+
+        exercisesLVPush = findViewById(R.id.exercisesSSPPush);
+        setsLVPush = findViewById(R.id.setsSSPPush);
+        repsLVPush = findViewById(R.id.repsSSPPush);
+        exAdaptPush = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdExercises);
+        seAdaptPush = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdSets);
+        reAdaptPush = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdReps);
+
+        exercisesLVPush.setAdapter(exAdapt);
+        setsLVPush.setAdapter(seAdapt);
+        repsLVPush.setAdapter(reAdapt);*/
+
+    //TODO----implement 4 2 and 1 times a week
+
+        orderdExercises.add("EXERCISES");
+        orderdSets.add("SETS");
+        orderdReps.add("REPS");
+
+        for(int x = 0; x < 2; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercises.add(pullexercises1.get(x));
+                orderdSets.add(pullsets1.get(x));
+                orderdReps.add(pullreps1.get(x));
+            }
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercises.add(pushexercises1.get(x));
+                orderdSets.add(pushsets1.get(x));
+                orderdReps.add(pushreps1.get(x));
+            }
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercises.add(legsexercises1.get(x));
+                orderdSets.add(legssets1.get(x));
+                orderdReps.add(legsreps1.get(x));
+            }
+
+            //TODO--implement seperate LVs for push pull and Legs
+
+        }
 
     }
 }
