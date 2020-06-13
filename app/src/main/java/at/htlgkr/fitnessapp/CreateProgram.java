@@ -2,6 +2,7 @@ package at.htlgkr.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -349,49 +350,125 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Advanced, Gym, 6-5-3------------------
                                 if((experience == "Advanced" && opportunity == "Gym" && counter == "6") || (experience == "Advanced" && opportunity == "Gym" && counter == "3") || (experience == "Advanced" && opportunity == "Gym" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
 
                                     if((experience == "Advanced" && opportunity == "Gym" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Advanced" && opportunity == "Gym" && counter == "5"))
+                                    else if((experience == "Advanced" && opportunity == "Gym" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
                                     else if((experience == "Advanced" && opportunity == "Gym" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Advanced, Gym, 4-2------------------
                                 if((experience == "Advanced" && opportunity == "Gym" && counter == "4") || (experience == "Advanced" && opportunity == "Gym" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
 
                                     if((experience == "Advanced" && opportunity == "Gym" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Advanced" && opportunity == "Gym" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Advanced, Gym, 1------------------
                                 if((experience == "Advanced" && opportunity == "Gym" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
 
                                     if((experience == "Advanced" && opportunity == "Gym" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                         //---------------------GYM - STANDARD---------------------
@@ -399,49 +476,123 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Standard, Gym, 6-5-3------------------
                                 if((experience == "Standard" && opportunity == "Gym" && counter == "6") || (experience == "Standard" && opportunity == "Gym" && counter == "3") || (experience == "Standard" && opportunity == "Gym" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
 
                                     if((experience == "Standard" && opportunity == "Gym" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Standard" && opportunity == "Gym" && counter == "5"))
+                                    else if((experience == "Standard" && opportunity == "Gym" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
                                     else if((experience == "Standard" && opportunity == "Gym" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Standard, Gym, 4-2------------------
                                 if((experience == "Standard" && opportunity == "Gym" && counter == "4") || (experience == "Standard" && opportunity == "Gym" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Standard" && opportunity == "Gym" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Standard" && opportunity == "Gym" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Standard, Gym, 1------------------
                                 if((experience == "Standard" && opportunity == "Gym" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Standard" && opportunity == "Gym" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
 
@@ -450,49 +601,122 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Beginner, Gym, 6-5-3------------------
                                 if((experience == "Beginner" && opportunity == "Gym" && counter == "6") || (experience == "Beginner" && opportunity == "Gym" && counter == "3") || (experience == "Beginner" && opportunity == "Gym" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Gym" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Gym" && counter == "5"))
+                                    else if((experience == "Beginner" && opportunity == "Gym" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Gym" && counter == "3"))
+                                    else if((experience == "Advanced" && opportunity == "Gym" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Beginner, Gym, 4-2------------------
                                 if((experience == "Beginner" && opportunity == "Gym" && counter == "4") || (experience == "Beginner" && opportunity == "Gym" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Gym" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Beginner" && opportunity == "Gym" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Beginner, Gym, 1------------------
                                 if((experience == "Beginner" && opportunity == "Gym" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Gym" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
 
@@ -503,49 +727,122 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Advanced, Bodyweight, 6-5-3------------------
                                 if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "6") || (experience == "Advanced" && opportunity == "Bodyweight" && counter == "3") || (experience == "Advanced" && opportunity == "Bodyweight" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "5"))
+                                    else if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
                                     else if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Advanced, Bodyweight, 4-2------------------
                                 if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "4") || (experience == "Advanced" && opportunity == "Bodyweight" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Advanced, Bodyweight, 1------------------
                                 if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
 
@@ -554,49 +851,122 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Standard, Bodyweight, 6-5-3------------------
                                 if((experience == "Standard" && opportunity == "Bodyweight" && counter == "6") || (experience == "Standard" && opportunity == "Bodyweight" && counter == "3") || (experience == "Standard" && opportunity == "Bodyweight" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Standard" && opportunity == "Bodyweight" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Standard" && opportunity == "Bodyweight" && counter == "5"))
+                                    else if((experience == "Standard" && opportunity == "Bodyweight" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
                                     else if((experience == "Standard" && opportunity == "Bodyweight" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Standard, Bodyweight, 4-2------------------
                                 if((experience == "Standard" && opportunity == "Bodyweight" && counter == "4") || (experience == "Standard" && opportunity == "Bodyweight" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Standard" && opportunity == "Bodyweight" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Standard" && opportunity == "Bodyweight" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Standard, Bodyweight, 1------------------
                                 if((experience == "Standard" && opportunity == "Bodyweight" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Standard" && opportunity == "Bodyweight" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                         //---------------------BODYWEIGHT - BEGINNER---------------------
@@ -604,49 +974,122 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Beginner, Bodyweight, 6-5-3------------------
                                 if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "6") || (experience == "Beginner" && opportunity == "Bodyweight" && counter == "3") || (experience == "Beginner" && opportunity == "Bodyweight" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "5"))
+                                    else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
                                     else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Beginner, Bodyweight, 4-2------------------
                                 if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "4") || (experience == "Beginner" && opportunity == "Bodyweight" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Beginner, Bodyweight, 1------------------
                                 if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
 
@@ -657,49 +1100,122 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Advanced, Bench, Barbell and Dumbbells, 6-5-3------------------
                                 if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6") || (experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3") || (experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
+                                    else if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
                                     else if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Advanced, Bench, Barbell and Dumbbells, 4-2------------------
                                 if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4") || (experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Advanced, Bench, Barbell and Dumbbells, 1------------------
                                 if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
 
@@ -708,49 +1224,122 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Standard, Bench, Barbell and Dumbbells, 6-5-3------------------
                                 if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6") || (experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3") || (experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
+                                    else if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
                                     else if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Standard, Bench, Barbell and Dumbbells, 4-2------------------
                                 if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4") || (experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Standard, Bench, Barbell and Dumbbells, 1------------------
                                 if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
 
@@ -759,49 +1348,122 @@ public class CreateProgram extends AppCompatActivity
                             //------------------Beginner, Bench, Barbell and Dumbbells, 6-5-3------------------
                                 if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6") || (experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3") || (experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                            ShowSingleProgram.legstwo = splitLegs[1].toString();
+                                        }
+
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
+                                    else if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5") )
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                            ShowSingleProgram.pulltwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                            ShowSingleProgram.pushtwo = splitPush[1].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
                                     else if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pullone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.pushone = splitPush[0].toString();
+                                        }
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        {
+                                            String[] splitLegs = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.legsone = splitLegs[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Beginner, Bench, Barbell and Dumbbells, 4-2------------------
                                 if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4") || (experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                            ShowSingleProgram.upperbodytwo = splitPull[1].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                            ShowSingleProgram.lowerbodytwo = splitPush[1].toString();
+                                        }
                                     }
                                     else if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.upperbodyone = splitPull[0].toString();
+                                        }
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        {
+                                            String[] splitPush = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.lowerbodyone = splitPush[0].toString();
+                                        }
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                             //------------------Beginner, Bench, Barbell and Dumbbells, 1------------------
                                 if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
                                 {
-                                    Toast.makeText(this, pgparts2[x].toString(), Toast.LENGTH_SHORT).show();
-                                    System.out.println("PROGRAMS_"+ pgBeforeSplit.get(j).toString());
-
                                     if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
                                     {
-                                        Toast.makeText(this, "PENIS", Toast.LENGTH_SHORT).show();
+                                        String namestr = pgparts2[1].toString();
+                                        if(namestr.contains("Fullbody") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("1"))
+                                        {
+                                            String[] splitPull = pgparts2[2].toString().split("\\|");
+                                            ShowSingleProgram.fullbodyone = splitPull[0].toString();
+                                        }
+
                                     }
+                                    startShowSingleProgram();
                                     break;
                                 }
                     }
@@ -825,5 +1487,11 @@ public class CreateProgram extends AppCompatActivity
     }
     //----------------------------------------GetExercises-End---------------------------------------
 
+
+    public void startShowSingleProgram()
+    {
+        Intent sspIntent = new Intent(CreateProgram.this, ShowSingleProgram.class);
+        startActivity(sspIntent);
+    }
 
 }
