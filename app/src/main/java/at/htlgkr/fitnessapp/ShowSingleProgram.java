@@ -74,31 +74,27 @@ public class ShowSingleProgram extends AppCompatActivity {
     public static String fullbodyexercise1reps = null;
 
     public ArrayList beforeSplitList = new ArrayList();
-    public ArrayList orderdExercises = new ArrayList();
-    public ArrayList orderdSets = new ArrayList();
-    public ArrayList orderdReps = new ArrayList();
 
+    public ArrayList orderdExercisesPull1 = new ArrayList();
+    public ArrayList orderdSetsPull1 = new ArrayList();
+    public ArrayList orderdRepsPull1 = new ArrayList();
 
-    /*
-    public ListView exercisesLV;
-    public ListView setsLV;
-    public ListView repsLV;
+    public ArrayList orderdExercisesPush1 = new ArrayList();
+    public ArrayList orderdSetsPush1 = new ArrayList();
+    public ArrayList orderdRepsPush1 = new ArrayList();
 
-    public ArrayAdapter exAdapt;
-    public ArrayAdapter seAdapt;
-    public ArrayAdapter reAdapt;
+    public ArrayList orderdExercisesLegs1 = new ArrayList();
+    public ArrayList orderdSetsLegs1 = new ArrayList();
+    public ArrayList orderdRepsLegs1 = new ArrayList();
 
-    public ListView exercisesLVPush;
-    public ListView setsLVPush;
-    public ListView repsLVPush;
+    public RecyclerView recyclerViewPull1;
+    public RecyclerViewAdapter rvadaptPull1;
 
-    public ArrayAdapter exAdaptPush;
-    public ArrayAdapter seAdaptPush;
-    public ArrayAdapter reAdaptPush;
-    */
+    public RecyclerView recyclerViewPush1;
+    public RecyclerViewAdapter rvadaptPush1;
 
-    RecyclerView recyclerViewTest;
-
+    public RecyclerView recyclerViewLegs1;
+    public RecyclerViewAdapter rvadaptLegs1;
 
 
     @Override
@@ -107,14 +103,8 @@ public class ShowSingleProgram extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_single_program);
 
-        System.out.println("PENIS_SSP_" + pullone + " " + pulltwo + " " + pushone + " " + pushtwo + " " + legsone + " " + legstwo);
-
         initLists();
 
-        recyclerViewTest = findViewById(R.id.recyclerviewtest);
-        RecyclerViewAdapter rvadapt = new RecyclerViewAdapter(this, orderdExercises, orderdSets, orderdReps);
-        recyclerViewTest.setAdapter(rvadapt);
-        recyclerViewTest.setLayoutManager(new LinearLayoutManager(this));
     }
 
     public void initLists()
@@ -303,59 +293,65 @@ public class ShowSingleProgram extends AppCompatActivity {
         }
     }
 
-    /*
-        exercisesLV = findViewById(R.id.exercisesSSP);
-        setsLV = findViewById(R.id.setsSSP);
-        repsLV = findViewById(R.id.repsSSP);
-        exAdapt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdExercises);
-        seAdapt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdSets);
-        reAdapt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdReps);
 
-        exercisesLV.setAdapter(exAdapt);
-        setsLV.setAdapter(seAdapt);
-        repsLV.setAdapter(reAdapt);
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
-        exercisesLVPush = findViewById(R.id.exercisesSSPPush);
-        setsLVPush = findViewById(R.id.setsSSPPush);
-        repsLVPush = findViewById(R.id.repsSSPPush);
-        exAdaptPush = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdExercises);
-        seAdaptPush = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdSets);
-        reAdaptPush = new ArrayAdapter(this, android.R.layout.simple_list_item_1, orderdReps);
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
-        exercisesLVPush.setAdapter(exAdapt);
-        setsLVPush.setAdapter(seAdapt);
-        repsLVPush.setAdapter(reAdapt);*/
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewpull);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
-    //TODO----implement 4 2 and 1 times a week
 
-        orderdExercises.add("EXERCISES");
-        orderdSets.add("SETS");
-        orderdReps.add("REPS");
+        orderdExercisesPull1.add("EXERCISES");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
 
-        for(int x = 0; x < 2; x++)
+        orderdExercisesPush1.add("EXERCISES");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISES");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
         {
             if(!pullexercises1.get(x).equals(null))
             {
-                orderdExercises.add(pullexercises1.get(x));
-                orderdSets.add(pullsets1.get(x));
-                orderdReps.add(pullreps1.get(x));
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
             }
-            if(!pushexercises1.get(x).equals(null))
-            {
-                orderdExercises.add(pushexercises1.get(x));
-                orderdSets.add(pushsets1.get(x));
-                orderdReps.add(pushreps1.get(x));
-            }
-            if(!legsexercises1.get(x).equals(null))
-            {
-                orderdExercises.add(legsexercises1.get(x));
-                orderdSets.add(legssets1.get(x));
-                orderdReps.add(legsreps1.get(x));
-            }
-
-            //TODO--implement seperate LVs for push pull and Legs
-
         }
 
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+        //TODO----doesn't show Pull
+        //TODO----implement 4 2 and 1 times a week
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,11 +8,33 @@
     tools:context=".ShowSingleProgram"
     android:orientation="vertical"
 >
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerviewtest"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-    />
+        tools:context=".ShowSingleProgram"
+        android:orientation="vertical"
+    >
+        <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewpull"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewpush"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewlegs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
