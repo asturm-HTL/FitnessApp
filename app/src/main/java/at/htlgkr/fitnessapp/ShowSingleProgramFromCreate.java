@@ -80,18 +80,43 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
     //----------------exercises 4,2-------------------
-    public static String upperbodyexercise1 = null;
-    public static String upperbodyexercise1reps = null;
-    public static String upperbodyexercise2 = null;
-    public static String upperbodyexercise2reps = null;
-    public static String lowerbodyexercise1 = null;
-    public static String lowerbodyexercise1reps = null;
-    public static String lowerbodyexercise2 = null;
-    public static String lowerbodyexercise2reps = null;
+    public static ArrayList upperbodyexercises1 = new ArrayList();
+    public static ArrayList upperbodysets1 = new ArrayList();
+    public static ArrayList upperbodyreps1 = new ArrayList();
+    public static ArrayList upperbodyexercises2 = new ArrayList();
+    public static ArrayList upperbodysets2 = new ArrayList();
+    public static ArrayList upperbodyreps2 = new ArrayList();
+    public static ArrayList lowerbodyexercises1 = new ArrayList();
+    public static ArrayList lowerbodysets1 = new ArrayList();
+    public static ArrayList lowerbodyreps1 = new ArrayList();
+    public static ArrayList lowerbodyexercises2 = new ArrayList();
+    public static ArrayList lowerbodysets2 = new ArrayList();
+    public static ArrayList lowerbodyreps2 = new ArrayList();
+
+    public ArrayList orderdExercisesUB1 = new ArrayList();
+    public ArrayList orderdSetsUB1 = new ArrayList();
+    public ArrayList orderdRepsUB1 = new ArrayList();
+
+    public ArrayList orderdExercisesUB2 = new ArrayList();
+    public ArrayList orderdSetsUB2 = new ArrayList();
+    public ArrayList orderdRepsUB2 = new ArrayList();
+
+    public ArrayList orderdExercisesLB1 = new ArrayList();
+    public ArrayList orderdSetsLB1 = new ArrayList();
+    public ArrayList orderdRepsLB1 = new ArrayList();
+
+    public ArrayList orderdExercisesLB2 = new ArrayList();
+    public ArrayList orderdSetsLB2 = new ArrayList();
+    public ArrayList orderdRepsLB2 = new ArrayList();
 
     //----------------exercises 1-------------------
-    public static String fullbodyexercise1 = null;
-    public static String fullbodyexercise1reps = null;
+    public static ArrayList fullbodyexercises1 = new ArrayList();
+    public static ArrayList fullbodysets1 = new ArrayList();
+    public static ArrayList fullbodyreps1 = new ArrayList();
+
+    public ArrayList orderdExercisesFB1 = new ArrayList();
+    public ArrayList orderdSetsFB1 = new ArrayList();
+    public ArrayList orderdRepsFB1 = new ArrayList();
 
     public ArrayList beforeSplitList = new ArrayList();
 
@@ -158,6 +183,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         setContentView(R.layout.activity_show_single_program);
 
         initLists();
+        //TODO-----Back button
 
     }
 
@@ -668,6 +694,3995 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         programSaveString = "3" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
 
 
+    }
+    else if (counter == "6" && opportunity == "Gym" && experience == "Standard")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        String legstwoStr = legstwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legstwoParts1 = legstwoStr.split(";");
+
+        for (int i = 0; i < legstwoParts1.length; i++)
+        {
+            String[] legstwoParts2 = legsParts1[i].split("\\+");
+            String[] legstwoParts3 = legstwoParts2[1].split("x");
+            legsexercises2.add(legstwoParts2[0].toString());
+            legssets2.add(legstwoParts3[0].toString());
+            legsreps2.add(legstwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        legs2tv = findViewById(R.id.legs2tv);
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+        legs2tv.setText("Legs - Day 6");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs2 = findViewById(R.id.recyclerviewlegs2);
+        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2);
+        recyclerViewLegs2.setAdapter(rvadaptLegs2);
+        recyclerViewLegs2.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        orderdExercisesLegs2.add("EXERCISE");
+        orderdSetsLegs2.add("SETS");
+        orderdRepsLegs2.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises2.get(x).equals(null))
+            {
+                orderdExercisesLegs2.add(legsexercises2.get(x));
+                orderdSetsLegs2.add(legssets2.get(x));
+                orderdRepsLegs2.add(legsreps2.get(x));
+            }
+        }
+
+        programSaveString = "6" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1 + "|" + orderdExercisesLegs2 + "|" + orderdSetsLegs2 + "|" + orderdRepsLegs2;
+
+
+    }
+    else if (counter == "5" && opportunity == "Gym" && experience == "Standard")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "5" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+
+    }
+    else if (counter == "3" && opportunity == "Gym" && experience == "Standard")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+        pull1tv.setText("Pull - Day 1");
+        push1tv.setText("Push - Day 2");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "3" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+
+    }
+    else if (counter == "6" && opportunity == "Gym" && experience == "Beginner")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        String legstwoStr = legstwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legstwoParts1 = legstwoStr.split(";");
+
+        for (int i = 0; i < legstwoParts1.length; i++)
+        {
+            String[] legstwoParts2 = legsParts1[i].split("\\+");
+            String[] legstwoParts3 = legstwoParts2[1].split("x");
+            legsexercises2.add(legstwoParts2[0].toString());
+            legssets2.add(legstwoParts3[0].toString());
+            legsreps2.add(legstwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        legs2tv = findViewById(R.id.legs2tv);
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+        legs2tv.setText("Legs - Day 6");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs2 = findViewById(R.id.recyclerviewlegs2);
+        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2);
+        recyclerViewLegs2.setAdapter(rvadaptLegs2);
+        recyclerViewLegs2.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        orderdExercisesLegs2.add("EXERCISE");
+        orderdSetsLegs2.add("SETS");
+        orderdRepsLegs2.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises2.get(x).equals(null))
+            {
+                orderdExercisesLegs2.add(legsexercises2.get(x));
+                orderdSetsLegs2.add(legssets2.get(x));
+                orderdRepsLegs2.add(legsreps2.get(x));
+            }
+        }
+
+        programSaveString = "6" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1 + "|" + orderdExercisesLegs2 + "|" + orderdSetsLegs2 + "|" + orderdRepsLegs2;
+
+
+    }
+    else if (counter == "5" && opportunity == "Gym" && experience == "Beginner")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "5" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+
+    }
+    else if (counter == "3" && opportunity == "Gym" && experience == "Beginner")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+        pull1tv.setText("Pull - Day 1");
+        push1tv.setText("Push - Day 2");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "3" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+    }
+    else if (counter == "6" && opportunity == "Bodyweight" && experience == "Advanced")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        String legstwoStr = legstwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legstwoParts1 = legstwoStr.split(";");
+
+        for (int i = 0; i < legstwoParts1.length; i++)
+        {
+            String[] legstwoParts2 = legsParts1[i].split("\\+");
+            String[] legstwoParts3 = legstwoParts2[1].split("x");
+            legsexercises2.add(legstwoParts2[0].toString());
+            legssets2.add(legstwoParts3[0].toString());
+            legsreps2.add(legstwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        legs2tv = findViewById(R.id.legs2tv);
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+        legs2tv.setText("Legs - Day 6");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs2 = findViewById(R.id.recyclerviewlegs2);
+        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2);
+        recyclerViewLegs2.setAdapter(rvadaptLegs2);
+        recyclerViewLegs2.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        orderdExercisesLegs2.add("EXERCISE");
+        orderdSetsLegs2.add("SETS");
+        orderdRepsLegs2.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises2.get(x).equals(null))
+            {
+                orderdExercisesLegs2.add(legsexercises2.get(x));
+                orderdSetsLegs2.add(legssets2.get(x));
+                orderdRepsLegs2.add(legsreps2.get(x));
+            }
+        }
+
+        programSaveString = "6" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1 + "|" + orderdExercisesLegs2 + "|" + orderdSetsLegs2 + "|" + orderdRepsLegs2;
+
+
+    }
+    else if (counter == "5" && opportunity == "Bodyweight" && experience == "Advanced")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "5" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+
+    }
+    else if (counter == "3" && opportunity == "Bodyweight" && experience == "Advanced")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+        pull1tv.setText("Pull - Day 1");
+        push1tv.setText("Push - Day 2");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "3" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+
+    }
+    else if (counter == "6" && opportunity == "Bodyweight" && experience == "Standard")
+    {
+        programName = "Push-Pull-Legs";
+        Toast.makeText(this, "Bin drin", Toast.LENGTH_SHORT).show();
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        String legstwoStr = legstwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legstwoParts1 = legstwoStr.split(";");
+
+        for (int i = 0; i < legstwoParts1.length; i++)
+        {
+            String[] legstwoParts2 = legsParts1[i].split("\\+");
+            String[] legstwoParts3 = legstwoParts2[1].split("x");
+            legsexercises2.add(legstwoParts2[0].toString());
+            legssets2.add(legstwoParts3[0].toString());
+            legsreps2.add(legstwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        legs2tv = findViewById(R.id.legs2tv);
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+        legs2tv.setText("Legs - Day 6");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs2 = findViewById(R.id.recyclerviewlegs2);
+        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2);
+        recyclerViewLegs2.setAdapter(rvadaptLegs2);
+        recyclerViewLegs2.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        orderdExercisesLegs2.add("EXERCISE");
+        orderdSetsLegs2.add("SETS");
+        orderdRepsLegs2.add("REPS");
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 3; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 3; x++)
+        {
+            if(!legsexercises2.get(x).equals(null))
+            {
+                orderdExercisesLegs2.add(legsexercises2.get(x));
+                orderdSetsLegs2.add(legssets2.get(x));
+                orderdRepsLegs2.add(legsreps2.get(x));
+            }
+        }
+
+        programSaveString = "6" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1 + "|" + orderdExercisesLegs2 + "|" + orderdSetsLegs2 + "|" + orderdRepsLegs2;
+
+
+    }
+    else if (counter == "5" && opportunity == "Bodyweight" && experience == "Standard")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 3; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "5" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+
+    }
+    else if (counter == "3" && opportunity == "Bodyweight" && experience == "Standard")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+        pull1tv.setText("Pull - Day 1");
+        push1tv.setText("Push - Day 2");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 3; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "3" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+    }
+    else if (counter == "6" && opportunity == "Bodyweight" && experience == "Beginner")
+    {
+        programName = "Push-Pull-Legs";
+        Toast.makeText(this, "Bin drin", Toast.LENGTH_SHORT).show();
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        String legstwoStr = legstwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legstwoParts1 = legstwoStr.split(";");
+
+        for (int i = 0; i < legstwoParts1.length; i++)
+        {
+            String[] legstwoParts2 = legsParts1[i].split("\\+");
+            String[] legstwoParts3 = legstwoParts2[1].split("x");
+            legsexercises2.add(legstwoParts2[0].toString());
+            legssets2.add(legstwoParts3[0].toString());
+            legsreps2.add(legstwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        legs2tv = findViewById(R.id.legs2tv);
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+        legs2tv.setText("Legs - Day 6");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs2 = findViewById(R.id.recyclerviewlegs2);
+        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2);
+        recyclerViewLegs2.setAdapter(rvadaptLegs2);
+        recyclerViewLegs2.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        orderdExercisesLegs2.add("EXERCISE");
+        orderdSetsLegs2.add("SETS");
+        orderdRepsLegs2.add("REPS");
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 3; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 3; x++)
+        {
+            if(!legsexercises2.get(x).equals(null))
+            {
+                orderdExercisesLegs2.add(legsexercises2.get(x));
+                orderdSetsLegs2.add(legssets2.get(x));
+                orderdRepsLegs2.add(legsreps2.get(x));
+            }
+        }
+
+        programSaveString = "6" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1 + "|" + orderdExercisesLegs2 + "|" + orderdSetsLegs2 + "|" + orderdRepsLegs2;
+
+
+    }
+    else if (counter == "5" && opportunity == "Bodyweight" && experience == "Beginner")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = pulltwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            pullexercises2.add(pulltwoParts2[0].toString());
+            pullsets2.add(pulltwoParts3[0].toString());
+            pullreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = pushtwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            pushexercises2.add(pushtwoParts2[0].toString());
+            pushsets2.add(pushtwoParts3[0].toString());
+            pushreps2.add(pushtwoParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+
+        pull1tv = findViewById(R.id.pull1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+        push1tv = findViewById(R.id.push1tv);
+        push2tv = findViewById(R.id.push2tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+
+        pull1tv.setText("Pull - Day 1");
+        pull2tv.setText("Pull - Day 4");
+        push1tv.setText("Push - Day 2");
+        push2tv.setText("Push - Day 5");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        recyclerViewPush2.setAdapter(rvadaptPush2);
+        recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesPush2.add("EXERCISE");
+        orderdSetsPush2.add("SETS");
+        orderdRepsPush2.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises2.get(x).equals(null))
+            {
+                orderdExercisesPull2.add(pullexercises2.get(x));
+                orderdSetsPull2.add(pullsets2.get(x));
+                orderdRepsPull2.add(pullreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises2.get(x).equals(null))
+            {
+                orderdExercisesPush2.add(pushexercises2.get(x));
+                orderdSetsPush2.add(pushsets2.get(x));
+                orderdRepsPush2.add(pushreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 3; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "5" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPull2 + "|" + orderdSetsPull2 + "|" + orderdRepsPull2 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesPush2 + "|" + orderdSetsPush2 + "|" + orderdRepsPush2 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+
+    }
+    else if (counter == "3" && opportunity == "Bodyweight" && experience == "Beginner")
+    {
+        programName = "Push-Pull-Legs";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            pullexercises1.add(pullParts2[0].toString());
+            pullsets1.add(pullParts3[0].toString());
+            pullreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = pushone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            pushexercises1.add(pushParts2[0].toString());
+            pushsets1.add(pushParts3[0].toString());
+            pushreps1.add(pushParts3[1].toString());
+        }
+
+        //-------------------------------------Legs-------------------------------------
+        String legsoneStr = legsone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] legsParts1 = legsoneStr.split(";");
+
+        for (int i = 0; i < legsParts1.length; i++)
+        {
+            String[] legsParts2 = legsParts1[i].split("\\+");
+            String[] legsParts3 = legsParts2[1].split("x");
+            legsexercises1.add(legsParts2[0].toString());
+            legssets1.add(legsParts3[0].toString());
+            legsreps1.add(legsParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+
+        pull1tv.setText("Pull - Day 1");
+        push1tv.setText("Push - Day 2");
+        legs1tv.setText("Legs - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+        for(int x = 0; x < 4; x++)
+        {
+            if(!pullexercises1.get(x).equals(null))
+            {
+                orderdExercisesPull1.add(pullexercises1.get(x));
+                orderdSetsPull1.add(pullsets1.get(x));
+                orderdRepsPull1.add(pullreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 5; x++)
+        {
+            if(!pushexercises1.get(x).equals(null))
+            {
+                orderdExercisesPush1.add(pushexercises1.get(x));
+                orderdSetsPush1.add(pushsets1.get(x));
+                orderdRepsPush1.add(pushreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 3; x++)
+        {
+            if(!legsexercises1.get(x).equals(null))
+            {
+                orderdExercisesLegs1.add(legsexercises1.get(x));
+                orderdSetsLegs1.add(legssets1.get(x));
+                orderdRepsLegs1.add(legsreps1.get(x));
+            }
+        }
+
+        programSaveString = "3" + "|" + programName + "|" + orderdExercisesPull1 + "|" + orderdSetsPull1 + "|" + orderdRepsPull1 + "|" + orderdExercisesPush1 + "|" + orderdSetsPush1 + "|" + orderdRepsPush1 + "|" + orderdExercisesLegs1 + "|" + orderdSetsLegs1 + "|" + orderdRepsLegs1;
+
+    }
+    else if (counter == "4" && opportunity == "Bodyweight" && experience == "Advanced")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = upperbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            upperbodyexercises2.add(pulltwoParts2[0].toString());
+            upperbodysets2.add(pulltwoParts3[0].toString());
+            upperbodyreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = lowerbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            lowerbodyexercises2.add(pushtwoParts2[0].toString());
+            lowerbodysets2.add(pushtwoParts3[0].toString());
+            lowerbodyreps2.add(pushtwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        pull2tv.setText("Lowerbody - Day 4");
+        push1tv.setText("Lowerbody - Day 2");
+        legs1tv.setText("Upperbody - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesUB2.add(upperbodyexercises2.get(x));
+                orderdSetsUB2.add(upperbodysets2.get(x));
+                orderdRepsUB2.add(upperbodyreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesLB2.add(lowerbodyexercises2.get(x));
+                orderdSetsLB2.add(lowerbodysets2.get(x));
+                orderdRepsLB2.add(lowerbodyreps2.get(x));
+            }
+        }
+
+        programSaveString = "4" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesUB2 + "|" + orderdSetsUB2 + "|" + orderdRepsUB2 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1 + "|" + orderdExercisesLB2 + "|" + orderdSetsLB2 + "|" + orderdRepsLB2;
+
+    }
+    else if (counter == "2" && opportunity == "Bodyweight" && experience == "Advanced")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        push1tv.setText("Lowerbody - Day 2");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "2" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1;
+
+    }
+    else if (counter == "4" && opportunity == "Bodyweight" && experience == "Standard")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = upperbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            upperbodyexercises2.add(pulltwoParts2[0].toString());
+            upperbodysets2.add(pulltwoParts3[0].toString());
+            upperbodyreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = lowerbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            lowerbodyexercises2.add(pushtwoParts2[0].toString());
+            lowerbodysets2.add(pushtwoParts3[0].toString());
+            lowerbodyreps2.add(pushtwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        pull2tv.setText("Lowerbody - Day 4");
+        push1tv.setText("Lowerbody - Day 2");
+        legs1tv.setText("Upperbody - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesUB2.add(upperbodyexercises2.get(x));
+                orderdSetsUB2.add(upperbodysets2.get(x));
+                orderdRepsUB2.add(upperbodyreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesLB2.add(lowerbodyexercises2.get(x));
+                orderdSetsLB2.add(lowerbodysets2.get(x));
+                orderdRepsLB2.add(lowerbodyreps2.get(x));
+            }
+        }
+
+        programSaveString = "4" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesUB2 + "|" + orderdSetsUB2 + "|" + orderdRepsUB2 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1 + "|" + orderdExercisesLB2 + "|" + orderdSetsLB2 + "|" + orderdRepsLB2;
+
+    }
+    else if (counter == "2" && opportunity == "Bodyweight" && experience == "Standard")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        push1tv.setText("Lowerbody - Day 2");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "2" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1;
+
+    }
+    else if (counter == "4" && opportunity == "Bodyweight" && experience == "Beginner")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = upperbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            upperbodyexercises2.add(pulltwoParts2[0].toString());
+            upperbodysets2.add(pulltwoParts3[0].toString());
+            upperbodyreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = lowerbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            lowerbodyexercises2.add(pushtwoParts2[0].toString());
+            lowerbodysets2.add(pushtwoParts3[0].toString());
+            lowerbodyreps2.add(pushtwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        pull2tv.setText("Lowerbody - Day 4");
+        push1tv.setText("Lowerbody - Day 2");
+        legs1tv.setText("Upperbody - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesUB2.add(upperbodyexercises2.get(x));
+                orderdSetsUB2.add(upperbodysets2.get(x));
+                orderdRepsUB2.add(upperbodyreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesLB2.add(lowerbodyexercises2.get(x));
+                orderdSetsLB2.add(lowerbodysets2.get(x));
+                orderdRepsLB2.add(lowerbodyreps2.get(x));
+            }
+        }
+
+        programSaveString = "4" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesUB2 + "|" + orderdSetsUB2 + "|" + orderdRepsUB2 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1 + "|" + orderdExercisesLB2 + "|" + orderdSetsLB2 + "|" + orderdRepsLB2;
+
+    }
+    else if (counter == "2" && opportunity == "Bodyweight" && experience == "Beginner")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        push1tv.setText("Lowerbody - Day 2");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "2" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1;
+
+    }
+    else if (counter == "4" && opportunity == "Gym" && experience == "Advanced")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = upperbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            upperbodyexercises2.add(pulltwoParts2[0].toString());
+            upperbodysets2.add(pulltwoParts3[0].toString());
+            upperbodyreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = lowerbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            lowerbodyexercises2.add(pushtwoParts2[0].toString());
+            lowerbodysets2.add(pushtwoParts3[0].toString());
+            lowerbodyreps2.add(pushtwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        pull2tv.setText("Lowerbody - Day 4");
+        push1tv.setText("Lowerbody - Day 2");
+        legs1tv.setText("Upperbody - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesUB2.add(upperbodyexercises2.get(x));
+                orderdSetsUB2.add(upperbodysets2.get(x));
+                orderdRepsUB2.add(upperbodyreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesLB2.add(lowerbodyexercises2.get(x));
+                orderdSetsLB2.add(lowerbodysets2.get(x));
+                orderdRepsLB2.add(lowerbodyreps2.get(x));
+            }
+        }
+
+        programSaveString = "4" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesUB2 + "|" + orderdSetsUB2 + "|" + orderdRepsUB2 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1 + "|" + orderdExercisesLB2 + "|" + orderdSetsLB2 + "|" + orderdRepsLB2;
+
+    }
+    else if (counter == "2" && opportunity == "Gym" && experience == "Advanced")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        push1tv.setText("Lowerbody - Day 2");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "2" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1;
+
+    }
+    else if (counter == "4" && opportunity == "Gym" && experience == "Standard")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = upperbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            upperbodyexercises2.add(pulltwoParts2[0].toString());
+            upperbodysets2.add(pulltwoParts3[0].toString());
+            upperbodyreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = lowerbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            lowerbodyexercises2.add(pushtwoParts2[0].toString());
+            lowerbodysets2.add(pushtwoParts3[0].toString());
+            lowerbodyreps2.add(pushtwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        pull2tv.setText("Lowerbody - Day 4");
+        push1tv.setText("Lowerbody - Day 2");
+        legs1tv.setText("Upperbody - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesUB2.add(upperbodyexercises2.get(x));
+                orderdSetsUB2.add(upperbodysets2.get(x));
+                orderdRepsUB2.add(upperbodyreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesLB2.add(lowerbodyexercises2.get(x));
+                orderdSetsLB2.add(lowerbodysets2.get(x));
+                orderdRepsLB2.add(lowerbodyreps2.get(x));
+            }
+        }
+
+        programSaveString = "4" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesUB2 + "|" + orderdSetsUB2 + "|" + orderdRepsUB2 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1 + "|" + orderdExercisesLB2 + "|" + orderdSetsLB2 + "|" + orderdRepsLB2;
+
+    }
+    else if (counter == "2" && opportunity == "Gym" && experience == "Standard")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        push1tv.setText("Lowerbody - Day 2");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "2" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1;
+
+    }
+    else if (counter == "4" && opportunity == "Gym" && experience == "Beginner")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        String pulltwoStr = upperbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pulltwoParts1 = pulltwoStr.split(";");
+
+        for (int i = 0; i < pulltwoParts1.length; i++)
+        {
+            String[] pulltwoParts2 = pullParts1[i].split("\\+");
+            String[] pulltwoParts3 = pulltwoParts2[1].split("x");
+            upperbodyexercises2.add(pulltwoParts2[0].toString());
+            upperbodysets2.add(pulltwoParts3[0].toString());
+            upperbodyreps2.add(pulltwoParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        String pushtwoStr = lowerbodytwo.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushtwoParts1 = pushtwoStr.split(";");
+
+        for (int i = 0; i < pushtwoParts1.length; i++)
+        {
+            String[] pushtwoParts2 = pushParts1[i].split("\\+");
+            String[] pushtwoParts3 = pushtwoParts2[1].split("x");
+            lowerbodyexercises2.add(pushtwoParts2[0].toString());
+            lowerbodysets2.add(pushtwoParts3[0].toString());
+            lowerbodyreps2.add(pushtwoParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+        legs1tv = findViewById(R.id.legs1tv);
+        pull2tv = findViewById(R.id.pull2tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        pull2tv.setText("Lowerbody - Day 4");
+        push1tv.setText("Lowerbody - Day 2");
+        legs1tv.setText("Upperbody - Day 3");
+
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        recyclerViewPull2.setAdapter(rvadaptPull2);
+        recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        recyclerViewLegs1.setAdapter(rvadaptLegs1);
+        recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPull2.add("EXERCISE");
+        orderdSetsPull2.add("SETS");
+        orderdRepsPull2.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        orderdExercisesLegs1.add("EXERCISE");
+        orderdSetsLegs1.add("SETS");
+        orderdRepsLegs1.add("REPS");
+
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesUB2.add(upperbodyexercises2.get(x));
+                orderdSetsUB2.add(upperbodysets2.get(x));
+                orderdRepsUB2.add(upperbodyreps2.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises2.get(x).equals(null))
+            {
+                orderdExercisesLB2.add(lowerbodyexercises2.get(x));
+                orderdSetsLB2.add(lowerbodysets2.get(x));
+                orderdRepsLB2.add(lowerbodyreps2.get(x));
+            }
+        }
+
+        programSaveString = "4" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesUB2 + "|" + orderdSetsUB2 + "|" + orderdRepsUB2 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1 + "|" + orderdExercisesLB2 + "|" + orderdSetsLB2 + "|" + orderdRepsLB2;
+
+    }
+    else if (counter == "2" && opportunity == "Gym" && experience == "Beginner")
+    {
+        programName = "Upperbody-\nLowerbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            upperbodyexercises1.add(pullParts2[0].toString());
+            upperbodysets1.add(pullParts3[0].toString());
+            upperbodyreps1.add(pullParts3[1].toString());
+        }
+
+        //-------------------------------------Push-------------------------------------
+        String pushoneStr = lowerbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pushParts1 = pushoneStr.split(";");
+
+        for (int i = 0; i < pushParts1.length; i++)
+        {
+            String[] pushParts2 = pushParts1[i].split("\\+");
+            String[] pushParts3 = pushParts2[1].split("x");
+            lowerbodyexercises1.add(pushParts2[0].toString());
+            lowerbodysets1.add(pushParts3[0].toString());
+            lowerbodyreps1.add(pushParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+        push1tv = findViewById(R.id.push1tv);
+
+        pull1tv.setText("Upperbody - Day 1");
+        push1tv.setText("Lowerbody - Day 2");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+        recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        recyclerViewPush1.setAdapter(rvadaptPush1);
+        recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        orderdExercisesPush1.add("EXERCISE");
+        orderdSetsPush1.add("SETS");
+        orderdRepsPush1.add("REPS");
+
+        for(int x = 0; x < 9; x++)
+        {
+            if(!upperbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesUB1.add(upperbodyexercises1.get(x));
+                orderdSetsUB1.add(upperbodysets1.get(x));
+                orderdRepsUB1.add(upperbodyreps1.get(x));
+            }
+        }
+
+        for(int x = 0; x < 8; x++)
+        {
+            if(!lowerbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesLB1.add(lowerbodyexercises1.get(x));
+                orderdSetsLB1.add(lowerbodysets1.get(x));
+                orderdRepsLB1.add(lowerbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "2" + "|" + programName + "|" + orderdExercisesUB1 + "|" + orderdSetsUB1 + "|" + orderdRepsUB1 + "|" + orderdExercisesLB1 + "|" + orderdSetsLB1 + "|" + orderdRepsLB1;
+    }
+    else if (counter == "1" && opportunity == "Gym" && experience == "Advanced")
+    {
+        programName = "Fullbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = fullbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            fullbodyexercises1.add(pullParts2[0].toString());
+            fullbodysets1.add(pullParts3[0].toString());
+            fullbodyreps1.add(pullParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+
+        pull1tv.setText("Fullbody - Day 1");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!fullbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesFB1.add(fullbodyexercises1.get(x));
+                orderdSetsFB1.add(fullbodysets1.get(x));
+                orderdRepsFB1.add(fullbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "1" + "|" + programName + "|" + orderdExercisesFB1 + "|" + orderdSetsFB1 + "|" + orderdRepsFB1;
+    }
+    else if (counter == "1" && opportunity == "Gym" && experience == "Standard")
+    {
+        programName = "Fullbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = fullbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            fullbodyexercises1.add(pullParts2[0].toString());
+            fullbodysets1.add(pullParts3[0].toString());
+            fullbodyreps1.add(pullParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+
+        pull1tv.setText("Fullbody - Day 1");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!fullbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesFB1.add(fullbodyexercises1.get(x));
+                orderdSetsFB1.add(fullbodysets1.get(x));
+                orderdRepsFB1.add(fullbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "1" + "|" + programName + "|" + orderdExercisesFB1 + "|" + orderdSetsFB1 + "|" + orderdRepsFB1;
+    }
+    else if (counter == "1" && opportunity == "Gym" && experience == "Beginner")
+    {
+        programName = "Fullbody";
+
+        //-------------------------------------Pull-------------------------------------
+        String pulloneStr = fullbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
+        String[] pullParts1 = pulloneStr.split(";");
+
+        for (int i = 0; i < pullParts1.length; i++)
+        {
+            String[] pullParts2 = pullParts1[i].split("\\+");
+            String[] pullParts3 = pullParts2[1].split("x");
+            fullbodyexercises1.add(pullParts2[0].toString());
+            fullbodysets1.add(pullParts3[0].toString());
+            fullbodyreps1.add(pullParts3[1].toString());
+        }
+
+        pull1tv = findViewById(R.id.pull1tv);
+
+        pull1tv.setText("Fullbody - Day 1");
+
+        recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1);
+        recyclerViewPull1.setAdapter(rvadaptPull1);
+        recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
+
+
+        orderdExercisesPull1.add("EXERCISE");
+        orderdSetsPull1.add("SETS");
+        orderdRepsPull1.add("REPS");
+
+        for(int x = 0; x < 7; x++)
+        {
+            if(!fullbodyexercises1.get(x).equals(null))
+            {
+                orderdExercisesFB1.add(fullbodyexercises1.get(x));
+                orderdSetsFB1.add(fullbodysets1.get(x));
+                orderdRepsFB1.add(fullbodyreps1.get(x));
+            }
+        }
+
+        programSaveString = "1" + "|" + programName + "|" + orderdExercisesFB1 + "|" + orderdSetsFB1 + "|" + orderdRepsFB1;
     }
 
         programNameTV = findViewById(R.id.programnameTV);

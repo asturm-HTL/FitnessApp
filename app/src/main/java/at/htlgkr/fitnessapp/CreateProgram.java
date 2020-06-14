@@ -99,7 +99,7 @@ public class CreateProgram extends AppCompatActivity
 
                 if(clickedExperience == "Beginner")
                 {
-                    workoutExperience = "Easy";
+                    workoutExperience = "Beginner";
                 }
                 else if(clickedExperience == "Standard")
                 {
@@ -194,6 +194,7 @@ public class CreateProgram extends AppCompatActivity
             public void onClick(View v)
             {
                 searchForProgram(workoutExperience, workoutOpportunities, workoutCounter);
+                System.out.println("PENIS_"+ workoutCounter + " " + workoutOpportunities + " " + workoutExperience);
             }
         });
 
@@ -444,33 +445,37 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
                                         if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Advanced" && opportunity == "Gym" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -486,8 +491,10 @@ public class CreateProgram extends AppCompatActivity
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -507,22 +514,22 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.legstwo = splitLegs[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
 
@@ -530,50 +537,50 @@ public class CreateProgram extends AppCompatActivity
                                     else if((experience == "Standard" && opportunity == "Gym" && counter == "5") )
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("5"))
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("5"))
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("5"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Standard" && opportunity == "Gym" && counter == "3"))
+                                    else if((experience == "Standard" && opportunity == "Gym" && counter == "6"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("3"))
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("3"))
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("3"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -589,33 +596,35 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
                                         if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Standard" && opportunity == "Gym" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -630,8 +639,10 @@ public class CreateProgram extends AppCompatActivity
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -650,72 +661,72 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.legstwo = splitLegs[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Beginner" && opportunity == "Gym" && counter == "5") )
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("5"))
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("5"))
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("5"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Advanced" && opportunity == "Gym" && counter == "3"))
+                                    else if((experience == "Beginner" && opportunity == "Gym" && counter == "3"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("3"))
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("3"))
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("3"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -731,33 +742,35 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
                                         if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Beginner" && opportunity == "Gym" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Gym") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -773,8 +786,10 @@ public class CreateProgram extends AppCompatActivity
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -795,72 +810,72 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.legstwo = splitLegs[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "5") )
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "3"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -876,33 +891,35 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
                                         if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Advanced" && opportunity == "Bodyweight" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -918,8 +935,10 @@ public class CreateProgram extends AppCompatActivity
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -939,22 +958,22 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.legstwo = splitLegs[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
 
@@ -962,50 +981,53 @@ public class CreateProgram extends AppCompatActivity
                                     else if((experience == "Standard" && opportunity == "Bodyweight" && counter == "5") )
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Standard" && opportunity == "Bodyweight" && counter == "3"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.counter = "3";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -1022,33 +1044,35 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
                                         if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Standard" && opportunity == "Bodyweight" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -1063,8 +1087,10 @@ public class CreateProgram extends AppCompatActivity
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -1082,72 +1108,72 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
                                         if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.legstwo = splitLegs[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "5") )
+                                    else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "6") )
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("5"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "3"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("3"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -1164,33 +1190,35 @@ public class CreateProgram extends AppCompatActivity
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
                                         if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                     else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -1206,8 +1234,10 @@ public class CreateProgram extends AppCompatActivity
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
