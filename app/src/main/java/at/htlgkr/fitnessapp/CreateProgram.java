@@ -194,7 +194,6 @@ public class CreateProgram extends AppCompatActivity
             public void onClick(View v)
             {
                 searchForProgram(workoutExperience, workoutOpportunities, workoutCounter);
-                System.out.println("PENIS_"+ workoutCounter + " " + workoutOpportunities + " " + workoutExperience);
             }
         });
 
@@ -231,7 +230,7 @@ public class CreateProgram extends AppCompatActivity
     }
 
 
-    //-----------------------------------------GetExercises-----------------------------------------//TODO-----fertig machen
+    //-----------------------------------------GetExercises-----------------------------------------
 
     private class GetAllPrograms extends AsyncTask<String, Integer, String>
     {
@@ -1127,7 +1126,7 @@ public class CreateProgram extends AppCompatActivity
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "6") )
+                                    else if((experience == "Beginner" && opportunity == "Bodyweight" && counter == "5") )
                                     {
                                         String namestr = pgparts2[1].toString();
                                         if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bodyweight") && namestr.contains("6"))
@@ -1249,141 +1248,145 @@ public class CreateProgram extends AppCompatActivity
                         //---------------------BENCH, BARBELL AND DUMBBELLS - ADVANCED---------------------
 
                             //------------------Advanced, Bench, Barbell and Dumbbells, 6-5-3------------------
-                                if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6") || (experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3") || (experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
+                                if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "6") || (experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "3") || (experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "5"))
                                 {
-                                    if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6"))
+                                    if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "6"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.legstwo = splitLegs[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5") )
+                                    else if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "5") )
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3"))
+                                    else if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "3"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Pull") && namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Push")&& namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                 }
                             //------------------Advanced, Bench, Barbell and Dumbbells, 4-2------------------
-                                if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4") || (experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
+                                if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "4") || (experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "2"))
                                 {
-                                    if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4"))
+                                    if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "4"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
+                                    else if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
 
                                 }
                             //------------------Advanced, Bench, Barbell and Dumbbells, 1------------------
-                                if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
+                                if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "1"))
                                 {
-                                    if((experience == "Advanced" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
+                                    if((experience == "Advanced" && opportunity == "BenchBarbellDumbbell" && counter == "1"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Fullbody") && namestr.contains("Advanced") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("1"))
+                                        if(namestr.contains("Fullbody") && namestr.contains("Advanced") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("1"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -1393,141 +1396,144 @@ public class CreateProgram extends AppCompatActivity
                         //---------------------BENCH, BARBELL AND DUMBBELLS - STANDARD---------------------
 
                             //------------------Standard, Bench, Barbell and Dumbbells, 6-5-3------------------
-                                if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6") || (experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3") || (experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
+                                if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "6") || (experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "3") || (experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "5"))
                                 {
-                                    if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6"))
+                                    if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "6"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.legstwo = splitLegs[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5") )
+                                    else if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "5") )
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3"))
+                                    else if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "3"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Pull") && namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Push")&& namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                 }
                             //------------------Standard, Bench, Barbell and Dumbbells, 4-2------------------
-                                if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4") || (experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
+                                if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "4") || (experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "2"))
                                 {
-                                    if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4"))
+                                    if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "4"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
+                                    else if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                 }
                             //------------------Standard, Bench, Barbell and Dumbbells, 1------------------
-                                if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
+                                if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "1"))
                                 {
-                                    if((experience == "Standard" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
+                                    if((experience == "Standard" && opportunity == "BenchBarbellDumbbell" && counter == "1"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Fullbody") && namestr.contains("Standard") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("1"))
+                                        if(namestr.contains("Fullbody") && namestr.contains("Standard") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("1"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
-
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
@@ -1537,141 +1543,145 @@ public class CreateProgram extends AppCompatActivity
                         //---------------------BENCH, BARBELL AND DUMBBELLS - BEGINNER---------------------
 
                             //------------------Beginner, Bench, Barbell and Dumbbells, 6-5-3------------------
-                                if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6") || (experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3") || (experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5"))
+                                if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "6") || (experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "3") || (experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "5"))
                                 {
-                                    if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "6"))
+                                    if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "6"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("6"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
                                             ShowSingleProgramFromCreate.legstwo = splitLegs[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "6";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "5") )
+                                    else if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "5") )
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.pulltwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.pushtwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("5"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "5";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "3"))
+                                    else if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "3"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Pull") && namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pullone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Push")&& namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.pushone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
-                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("3"))
+                                        if(namestr.contains("Legs")&& namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("6"))
                                         {
                                             String[] splitLegs = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.legsone = splitLegs[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "3";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
 
                                 }
                             //------------------Beginner, Bench, Barbell and Dumbbells, 4-2------------------
-                                if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4") || (experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
+                                if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "4") || (experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "2"))
                                 {
-                                    if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "4"))
+                                    if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "4"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
                                             ShowSingleProgramFromCreate.upperbodytwo = splitPull[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("4"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
                                             ShowSingleProgramFromCreate.lowerbodytwo = splitPush[1].toString();
-                                            ShowSingleProgramFromCreate.counter = "4";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
-                                    else if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "2"))
+                                    else if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "2"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        if(namestr.contains("Upperbody") && namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.upperbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
-                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("2"))
+                                        if(namestr.contains("Lowerbody")&& namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("4"))
                                         {
                                             String[] splitPush = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.lowerbodyone = splitPush[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "2";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
                                 }
                             //------------------Beginner, Bench, Barbell and Dumbbells, 1------------------
-                                if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
+                                if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "1"))
                                 {
-                                    if((experience == "Beginner" && opportunity == "Bench, Barbell and Dumbbells" && counter == "1"))
+                                    if((experience == "Beginner" && opportunity == "BenchBarbellDumbbell" && counter == "1"))
                                     {
                                         String namestr = pgparts2[1].toString();
-                                        if(namestr.contains("Fullbody") && namestr.contains("Beginner") && namestr.contains("Bench, Barbell and Dumbbells") && namestr.contains("1"))
+                                        if(namestr.contains("Fullbody") && namestr.contains("Beginner") && namestr.contains("BenchBarbellDumbbell") && namestr.contains("1"))
                                         {
                                             String[] splitPull = pgparts2[2].toString().split("\\|");
                                             ShowSingleProgramFromCreate.fullbodyone = splitPull[0].toString();
-                                            ShowSingleProgramFromCreate.counter = "1";
                                         }
+                                        ShowSingleProgramFromCreate.counter = counter;
+                                        ShowSingleProgramFromCreate.experience = experience;
+                                        ShowSingleProgramFromCreate.opportunity = opportunity;
                                         startShowSingleProgram();
                                         break;
                                     }
