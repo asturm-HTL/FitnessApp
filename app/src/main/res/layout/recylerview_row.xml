@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
+    android:background="@drawable/recyclerview_row"
 >
 
     <TextView
@@ -11,6 +11,10 @@
         android:layout_height="match_parent"
         android:layout_weight="0.5"
         android:text="Exercise"
+        android:textColor="#fff"
+        android:fontFamily="@font/fredoka_one"
+        android:paddingLeft="20dp"
+        android:textSize="18.5dp"
     />
 
     <TextView
@@ -19,6 +23,10 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Sets"
+        android:textColor="#fff"
+        android:fontFamily="@font/fredoka_one"
+        android:textAlignment="center"
+        android:textSize="20dp"
         />
 
     <TextView
@@ -27,5 +35,9 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Reps"
+        android:textColor="#fff"
+        android:fontFamily="@font/fredoka_one"
+        android:textAlignment="center"
+        android:textSize="20dp"
         />
 </LinearLayout>
