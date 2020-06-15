@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -22,10 +23,14 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.nio.Buffer;
 import java.util.ArrayList;
 
 public class ShowSingleProgramFromCreate extends AppCompatActivity {
@@ -34,6 +39,8 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     public static String counter = null;
     public static String experience = null;
     public static String opportunity = null;
+
+    public String stringReadFromSDCard;
 
     //----------------6, 5 or 3 times a week-------------------
     public static String pushone = null;
@@ -2511,9 +2518,8 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-
                 saveProgram(v);
-
+                startMain();
             }
         });
 
@@ -2524,8 +2530,8 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
     private void showSnackbar()
     {
-        ScrollView scrollLinearLayout =  findViewById(R.id.scrollLinearLayout);
-        Snackbar snackbar = Snackbar.make(scrollLinearLayout, "Workout-Program saved!", Snackbar.LENGTH_LONG);
+        LinearLayout linearLayout =  findViewById(R.id.drawer_layout);
+        Snackbar snackbar = Snackbar.make(linearLayout, "Workout-Program saved!", Snackbar.LENGTH_LONG);
         snackbar.show();
     }
 
@@ -2533,6 +2539,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
     private void writeToFile(String filename)
     {
+        readFromSDCard();
         String state = Environment.getExternalStorageState();
         if (!state.equals(Environment.MEDIA_MOUNTED)) return;
         File outFile = Environment.getExternalStorageDirectory();
@@ -2543,7 +2550,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         try
         {
             PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fullPath)));
-            out.print(programSaveString);
+            out.print(stringReadFromSDCard + ";" + programSaveString);
             out.flush();
             out.close();
             showSnackbar();
@@ -2586,4 +2593,45 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         }
     }
 
-}
+    public void startMain()
+    {
+        Intent mintent = new Intent(ShowSingleProgramFromCreate.this, MainActivity.class);
+        startActivity(mintent);
+    }
+
+    public void readFromSDCard()
+    {
+        File dir = Environment.getExternalStorageDirectory();
+        File file = new File(dir, "SavedPrograms");
+
+        if(file.exists())
+        {
+            StringBuilder text = new StringBuilder();
+
+            try
+            {
+                BufferedReader br = new BufferedReader(new FileReader(file));
+                String line;
+
+                while((line = br.readLine()) != null)
+                {
+                    text.append(line);
+                    text.append('\n');
+                }
+            }
+            catch(IOException e)
+            {
+
+            }
+
+            stringReadFromSDCard = text.toString();
+        }
+        else
+        {
+            System.out.println("MOIS_File doesn't exist");
+        }
+
+    }
+    }
+
+
