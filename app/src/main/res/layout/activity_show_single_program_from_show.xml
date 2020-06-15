@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowSingleProgramFromShow"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:id="@+id/scrollLinearLayoutS"
+    >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ShowSingleProgramFromShow"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/programnameTVS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:text="Pull-Push-Legs"
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <TextView
+            android:id="@+id/pull1tvS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewpull1S"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/pull1tv"
+            />
+
+        <TextView
+            android:id="@+id/push1tvS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewpush1S"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/push1tv"
+            />
+
+        <TextView
+            android:id="@+id/legs1tvS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewlegs1S"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/legs1tv"
+            />
+
+        <TextView
+            android:id="@+id/pull2tvS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewpull2S"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/pull2tv"
+            />
+
+        <TextView
+            android:id="@+id/push2tvS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewpush2S"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/push2tv"
+            />
+
+        <TextView
+            android:id="@+id/legs2tvS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=""
+            android:fontFamily="@font/fredoka_one"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerviewlegs2S"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/legs2tv"
+            />
+
+        <Button
+            android:id="@+id/saveProgramBtnS"
+            android:layout_width="210dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:text="Delete Program"
+            android:textSize="15sp"
+            android:fontFamily="@font/fredoka_one"
+            android:layout_below="@id/recyclerviewlegs2"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

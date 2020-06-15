@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ShowSingleProgramFromCreate"></activity>
+        <activity android:name=".ShowSingleProgramFromShow"></activity>
+        <activity android:name=".ShowSingleProgramFromCreate" />
         <activity android:name=".ExerciseInDetail" />
         <activity android:name=".ActivityBeforeTimer" />
         <activity android:name=".ExercisesAdvancedView" />
