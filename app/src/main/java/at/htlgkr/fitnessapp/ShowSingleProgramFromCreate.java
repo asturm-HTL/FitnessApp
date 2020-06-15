@@ -183,9 +183,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         setContentView(R.layout.activity_show_single_program);
 
         initLists();
-        System.out.println("PENIS_"+counter + " " + opportunity + " " +experience);
         //TODO-----Back button
-        Toast.makeText(this, counter + opportunity + experience, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -844,7 +842,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsLegs2.add("SETS");
         orderdRepsLegs2.add("REPS");
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 4; x++)
         {
             if(!pullexercises1.get(x).equals(null))
             {
@@ -854,7 +852,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 4; x++)
         {
             if(!pullexercises2.get(x).equals(null))
             {
@@ -864,7 +862,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 5; x++)
         {
             if(!pushexercises1.get(x).equals(null))
             {
@@ -874,7 +872,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 5; x++)
         {
             if(!pushexercises2.get(x).equals(null))
             {
@@ -884,7 +882,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 3; x++)
         {
             if(!legsexercises1.get(x).equals(null))
             {
@@ -894,7 +892,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 3; x++)
         {
             if(!legsexercises2.get(x).equals(null))
             {
@@ -1036,7 +1034,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsLegs1.add("SETS");
         orderdRepsLegs1.add("REPS");
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 4; x++)
         {
             if(!pullexercises1.get(x).equals(null))
             {
@@ -1046,7 +1044,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 4; x++)
         {
             if(!pullexercises2.get(x).equals(null))
             {
@@ -1056,7 +1054,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 5; x++)
         {
             if(!pushexercises1.get(x).equals(null))
             {
@@ -1066,7 +1064,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 5; x++)
         {
             if(!pushexercises2.get(x).equals(null))
             {
@@ -1076,7 +1074,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 3; x++)
         {
             if(!legsexercises1.get(x).equals(null))
             {
@@ -1169,7 +1167,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsLegs1.add("SETS");
         orderdRepsLegs1.add("REPS");
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 4; x++)
         {
             if(!pullexercises1.get(x).equals(null))
             {
@@ -1179,7 +1177,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 5; x++)
         {
             if(!pushexercises1.get(x).equals(null))
             {
@@ -1189,7 +1187,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 3; x++)
         {
             if(!legsexercises1.get(x).equals(null))
             {
@@ -1349,7 +1347,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsLegs2.add("SETS");
         orderdRepsLegs2.add("REPS");
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!pullexercises1.get(x).equals(null))
             {
@@ -1359,7 +1357,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!pullexercises2.get(x).equals(null))
             {
@@ -1369,7 +1367,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 7; x++)
         {
             if(!pushexercises1.get(x).equals(null))
             {
@@ -1379,7 +1377,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 7; x++)
         {
             if(!pushexercises2.get(x).equals(null))
             {
@@ -1389,7 +1387,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!legsexercises1.get(x).equals(null))
             {
@@ -1399,7 +1397,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!legsexercises2.get(x).equals(null))
             {
@@ -1541,7 +1539,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsLegs1.add("SETS");
         orderdRepsLegs1.add("REPS");
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!pullexercises1.get(x).equals(null))
             {
@@ -1551,7 +1549,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!pullexercises2.get(x).equals(null))
             {
@@ -1561,7 +1559,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 7; x++)
         {
             if(!pushexercises1.get(x).equals(null))
             {
@@ -1571,7 +1569,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 7; x++)
         {
             if(!pushexercises2.get(x).equals(null))
             {
@@ -1581,7 +1579,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!legsexercises1.get(x).equals(null))
             {
@@ -1674,7 +1672,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsLegs1.add("SETS");
         orderdRepsLegs1.add("REPS");
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!pullexercises1.get(x).equals(null))
             {
@@ -1684,7 +1682,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 7; x++)
         {
             if(!pushexercises1.get(x).equals(null))
             {
@@ -1694,7 +1692,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!legsexercises1.get(x).equals(null))
             {
@@ -1810,7 +1808,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdRepsLegs1.add("REPS");
 
 
-        for(int x = 0; x < 9; x++)
+        for(int x = 0; x < 7; x++)
         {
             if(!upperbodyexercises1.get(x).equals(null))
             {
@@ -1820,7 +1818,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 9; x++)
+        for(int x = 0; x < 7; x++)
         {
             if(!upperbodyexercises2.get(x).equals(null))
             {
@@ -1830,7 +1828,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 3; x++)
         {
             if(!lowerbodyexercises1.get(x).equals(null))
             {
@@ -1840,7 +1838,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 3; x++)
         {
             if(!lowerbodyexercises2.get(x).equals(null))
             {
@@ -1907,7 +1905,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsPush1.add("SETS");
         orderdRepsPush1.add("REPS");
 
-        for(int x = 0; x < 9; x++)
+        for(int x = 0; x < 7; x++)
         {
             if(!upperbodyexercises1.get(x).equals(null))
             {
@@ -1917,7 +1915,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 3; x++)
         {
             if(!lowerbodyexercises1.get(x).equals(null))
             {
@@ -2032,7 +2030,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdRepsLegs1.add("REPS");
 
 
-        for(int x = 0; x < 9; x++)
+        for(int x = 0; x < 10; x++)
         {
             if(!upperbodyexercises1.get(x).equals(null))
             {
@@ -2042,7 +2040,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 9; x++)
+        for(int x = 0; x < 10; x++)
         {
             if(!upperbodyexercises2.get(x).equals(null))
             {
@@ -2052,7 +2050,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!lowerbodyexercises1.get(x).equals(null))
             {
@@ -2062,7 +2060,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!lowerbodyexercises2.get(x).equals(null))
             {
@@ -2129,7 +2127,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsPush1.add("SETS");
         orderdRepsPush1.add("REPS");
 
-        for(int x = 0; x < 9; x++)
+        for(int x = 0; x < 10; x++)
         {
             if(!upperbodyexercises1.get(x).equals(null))
             {
@@ -2139,7 +2137,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             }
         }
 
-        for(int x = 0; x < 8; x++)
+        for(int x = 0; x < 6; x++)
         {
             if(!lowerbodyexercises1.get(x).equals(null))
             {
@@ -2448,7 +2446,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsPull1.add("SETS");
         orderdRepsPull1.add("REPS");
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 8; x++)
         {
             if(!fullbodyexercises1.get(x).equals(null))
             {
@@ -2491,7 +2489,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         orderdSetsPull1.add("SETS");
         orderdRepsPull1.add("REPS");
 
-        for(int x = 0; x < 7; x++)
+        for(int x = 0; x < 9; x++)
         {
             if(!fullbodyexercises1.get(x).equals(null))
             {

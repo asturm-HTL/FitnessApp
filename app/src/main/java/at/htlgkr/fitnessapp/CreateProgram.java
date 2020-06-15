@@ -851,6 +851,7 @@ public class CreateProgram extends AppCompatActivity
                                         ShowSingleProgramFromCreate.counter = counter;
                                         ShowSingleProgramFromCreate.experience = experience;
                                         ShowSingleProgramFromCreate.opportunity = opportunity;
+                                        System.out.println("MOIS_"+experience + counter +opportunity);
                                         startShowSingleProgram();
                                         break;
                                     }
