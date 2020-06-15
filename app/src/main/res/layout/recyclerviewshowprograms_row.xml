@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/recyclerview_row"
+    >
+
+    <TextView
+        android:id="@+id/programNameTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:text="Exercise"
+        android:textColor="#fff"
+        android:fontFamily="@font/fredoka_one"
+        android:padding="10dp"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        />
+
+</LinearLayout>

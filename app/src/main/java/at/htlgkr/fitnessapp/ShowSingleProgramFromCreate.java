@@ -198,7 +198,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     {
         if ((counter == "6" && opportunity == "Gym") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
         {
-            programName = "Push-Pull-Legs";
+            programName =  "Gym\nPush-Pull-Legs\n" + experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -409,7 +409,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         }
     else if ((counter == "5" && opportunity == "Gym") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Push-Pull-Legs";
+        programName =  "Gym\nPush-Pull-Legs\n" + experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -591,7 +591,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "3" && opportunity == "Gym") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Push-Pull-Legs";
+        programName =  "Gym\nPush-Pull-Legs\n" + experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -704,7 +704,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "6" && opportunity == "Bodyweight") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Push-Pull-Legs";
+        programName = "Bodyweight\nPush-Pull-Legs\n" +experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -915,7 +915,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "5" && opportunity == "Bodyweight") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Push-Pull-Legs";
+        programName = "Bodyweight\nPush-Pull-Legs\n" +experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -1097,7 +1097,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "3" && opportunity == "Bodyweight") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Push-Pull-Legs";
+        programName = "Bodyweight\nPush-Pull-Legs\n" +experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -1210,7 +1210,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "6" && opportunity == "BenchBarbellDumbbell") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Push-Pull-Legs";
+        programName = "Bench Barbell and Dumbbells\nPush-Pull-Legs\n" +experience;
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
         String[] pullParts1 = pulloneStr.split(";");
@@ -1420,7 +1420,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "5" && opportunity == "BenchBarbellDumbbell") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Push-Pull-Legs";
+        programName = "Bench, Barbell and Dumbbells\nPush-Pull-Legs\n" +experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -1602,7 +1602,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "3" && opportunity == "BenchBarbellDumbbell") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Push-Pull-Legs";
+        programName = "Bench, Barbell and Dumbbells\nPush-Pull-Legs\n" +experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = pullone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -1715,7 +1715,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "4" && opportunity == "Bodyweight") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Upperbody-\nLowerbody";
+        programName = "Bodyweight\nUpper-Lowerbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -1860,7 +1860,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "2" && opportunity == "Bodyweight") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Upperbody-\nLowerbody";
+        programName = "Bodyweight\nUpper-Lowerbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -1937,7 +1937,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "4" && opportunity == "BenchBarbellDumbbell") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Upperbody-\nLowerbody";
+        programName = "Bench Barbell and Dumbbells\nUpper-Lowerbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -2082,7 +2082,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "2" && opportunity == "BenchBarbellDumbbell") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Upperbody-\nLowerbody";
+        programName = "Bench Barbell and Dumbbells\nUpper-Lowerbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -2159,7 +2159,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "4" && opportunity == "Gym") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Upperbody-\nLowerbody";
+        programName = "Gym\nUpper-Lowerbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -2304,7 +2304,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "2" && opportunity == "Gym") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Upperbody-\nLowerbody";
+        programName = "Gym\nUpper-Lowerbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = upperbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -2381,7 +2381,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "1" && opportunity == "Gym") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Fullbody";
+        programName = "Gym\nFullbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = fullbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -2424,7 +2424,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "1" && opportunity == "Bodyweight") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Fullbody";
+        programName = "Bodyweight\nFullbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = fullbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -2467,7 +2467,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
     else if ((counter == "1" && opportunity == "BenchBarbellDumbbell") && (experience == "Advanced" || experience == "Standard" || experience == "Beginner"))
     {
-        programName = "Fullbody";
+        programName = "Bench Barbell and Dumbbells\nFullbody\n"+experience;
 
         //-------------------------------------Pull-------------------------------------
         String pulloneStr = fullbodyone.replace("weekone", "").replace("\"", "").replace(":", "");
@@ -2632,6 +2632,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         }
 
     }
-    }
+
+}
 
 
