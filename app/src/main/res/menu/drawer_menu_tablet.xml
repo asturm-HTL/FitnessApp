@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+
+        <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/nav_home_tablet"
+                android:icon="@drawable/ic_home_tablet"
+                android:title="Home"
+            />
+
+        </group>
+
+
+    <item android:title="User">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_account_tablet"
+                    android:icon="@drawable/ic_account_tablet"
+                    android:title="Account"
+                    />
+                <item
+                    android:id="@+id/nav_stepcounter"
+                    android:icon="@drawable/ic_stepcounter_tablet"
+                    android:title="Step Counter"
+                />
+
+            </group>
+        </menu>
+
+    </item>
+
+    <item android:title="Settings">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_settings_tablet"
+                    android:icon="@drawable/ic_settings_tablet"
+                    android:title="Settings"
+                    />
+            </group>
+        </menu>
+
+    </item>
+
+
+</menu>

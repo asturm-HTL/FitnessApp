@@ -46,6 +46,7 @@ public class TimeSpinnerAdapter extends ArrayAdapter<TimeList>
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.timespinner_row, parent, false);
         }
 
+
         TextView textViewName = convertView.findViewById(R.id.times);
 
         TimeList currentItem = getItem(position);

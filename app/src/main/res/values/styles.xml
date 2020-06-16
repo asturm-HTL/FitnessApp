@@ -12,6 +12,23 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="NavigationDrawerStyle">
+
+        <item name="android:textSize">30sp</item><!-- text size in menu-->
+
+        <!-- item size in menu-->
+        <item name="android:listPreferredItemHeightSmall">80dp</item>
+        <item name="listPreferredItemHeightSmall">80dp</item>
+
+        <!-- item padding left in menu-->
+        <item name="android:listPreferredItemPaddingLeft">10dp</item>
+        <item name="listPreferredItemPaddingLeft">10dp</item>
+
+        <!-- item padding right in menu-->
+        <item name="android:listPreferredItemPaddingRight">10dp</item>
+        <item name="listPreferredItemPaddingRight">10dp</item>
+    </style>
     
 
 </resources>
