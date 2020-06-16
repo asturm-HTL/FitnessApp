@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".StepCounter"
+android:orientation="vertical"
+android:background="@android:color/black">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1.5"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Timer"
+        android:textColor="#fff"
+        android:textSize="40dp"
+        android:gravity="top"
+        android:paddingTop="10dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/fredoka_one"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/actualStatusTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#fff"
+        android:textSize="25dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="65dp"
+        android:paddingTop="5dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/fredoka_one"
+
+    />
+
+
+
+</FrameLayout>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_weight="1"
+    >
+
+    <ProgressBar
+        android:id="@+id/workpauseprogress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/circle_shape"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circle_progress_bar"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/text_view_countdown"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Time"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+
+        />
+
+</FrameLayout>
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1.5"
+    >
+
+    <Button
+        android:id="@+id/button_start_pause"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:text="start"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button"
+        android:textSize="15sp"
+        android:fontFamily="@font/fredoka_one"
+    />
+
+</FrameLayout>
+
+
+</LinearLayout>

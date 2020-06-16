@@ -9,102 +9,129 @@
     android:orientation="vertical"
     android:background="@android:color/black"
     android:gravity=""
-    >
+>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Program"
         android:textColor="#fff"
         android:textAlignment="center"
-        android:textSize="50dp"
         android:fontFamily="@font/fredoka_one"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="70dp"
-    />
-
-    <TextView
-        android:id="@+id/workoutexperience"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choose your workout-experience"
-        android:textColor="#fff"
-        android:fontFamily="@font/fredoka_one"
-        android:textSize="23sp"
+        android:text="TIMER"
         android:layout_gravity="center"
+        android:textSize="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         />
 
-    <Spinner
-        android:id="@+id/workoutexperienceSpinner"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_below="@+id/workoutexperience"
+        android:orientation="horizontal"
         android:layout_gravity="center"
+        android:layout_marginBottom="1dp"
+    >
 
-        />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="6dp"
+        >
 
     <TextView
-        android:id="@+id/workoutopportunities"
+        android:id="@+id/work"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Choose your workout-opportunities:"
+        android:text="Length of your work-time"
         android:textColor="#fff"
         android:fontFamily="@font/fredoka_one"
-        android:textSize="23sp"
+        android:textSize="20sp"
         android:layout_gravity="center"
 
         />
 
     <Spinner
-        android:id="@+id/workoutopportunitiesSpinner"
+        android:id="@+id/spinnerwork"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/workoutopportunities"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/work"
         android:layout_gravity="center"
 
         />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="1dp"
+        >
+
     <TextView
-        android:id="@+id/workoutcount"
+        android:id="@+id/pause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How often do you want to work out?"
+        android:text="Length of your pause-time"
         android:textColor="#fff"
         android:fontFamily="@font/fredoka_one"
-        android:textSize="23sp"
+        android:textSize="20sp"
         android:layout_gravity="center"
 
         />
 
     <Spinner
-        android:id="@+id/workoutcountSpinner"
+        android:id="@+id/spinnerpause"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/workoutcount"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/pause"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/rounds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of rounds"
+        android:textColor="#fff"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="20sp"
         android:layout_gravity="center"
 
+        />
+
+    <Spinner
+        android:id="@+id/spinnerrounds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rounds"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
         />
 
     <Button
-        android:id="@+id/createProgramBtn"
+        android:id="@+id/admitBtn"
         android:layout_width="210dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:text="Create Program"
+        android:text="Admit"
         android:textSize="15sp"
         android:fontFamily="@font/fredoka_one"
-        android:layout_below="@id/workoutcountSpinner"
+        android:layout_below="@id/spinnerrounds"
         android:textColor="@android:color/black"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/button"
         />
 

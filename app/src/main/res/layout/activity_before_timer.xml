@@ -8,8 +8,21 @@
     tools:context=".ActivityBeforeTimer"
     android:orientation="vertical"
     android:background="@android:color/black"
-    android:gravity="center"
+    android:gravity=""
 >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:fontFamily="@font/fredoka_one"
+        android:text="TIMER"
+        android:layout_gravity="center"
+        android:textSize="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="30dp"
+        />
 
     <TextView
         android:id="@+id/work"
@@ -19,7 +32,9 @@
         android:textColor="#fff"
         android:fontFamily="@font/fredoka_one"
         android:textSize="25sp"
-    />
+        android:layout_gravity="center"
+
+        />
 
     <Spinner
         android:id="@+id/spinnerwork"
@@ -29,7 +44,9 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_below="@+id/work"
-    />
+        android:layout_gravity="center"
+
+        />
 
     <TextView
         android:id="@+id/pause"
@@ -39,6 +56,8 @@
         android:textColor="#fff"
         android:fontFamily="@font/fredoka_one"
         android:textSize="25sp"
+        android:layout_gravity="center"
+
         />
 
     <Spinner
@@ -49,6 +68,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+
         />
 
     <TextView
@@ -59,6 +80,8 @@
         android:textColor="#fff"
         android:fontFamily="@font/fredoka_one"
         android:textSize="25sp"
+        android:layout_gravity="center"
+
         />
 
     <Spinner
@@ -69,7 +92,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-    />
+        android:layout_gravity="center"
+        />
 
     <Button
         android:id="@+id/admitBtn"

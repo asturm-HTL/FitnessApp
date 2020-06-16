@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".Login"
+    android:background="@drawable/gainloginscreen"
+>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:orientation="vertical"
+    >
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:src="@drawable/gainschriftzug"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+
+        />
+
+        <EditText
+            android:id="@+id/usernameET"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:hint="username"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_person_tablet"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_tablet"
+            android:padding="20dp"
+            android:textSize="40dp"
+        />
+
+        <EditText
+            android:id="@+id/passwordET"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_lock_tablet"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/edit_tablet"
+            android:padding="20dp"
+            android:textSize="40dp"
+            />
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="375dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:text="Login"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/button"
+            android:textSize="30dp"
+        />
+
+        <TextView
+            android:id="@+id/createAccountTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Account"
+            android:textColor="#fff"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textSize="30dp"
+
+        />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

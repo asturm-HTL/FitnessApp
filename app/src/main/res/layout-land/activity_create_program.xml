@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityBeforeTimer"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Program"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:textSize="50dp"
+        android:fontFamily="@font/fredoka_one"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+    >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+        >
+
+            <TextView
+                android:id="@+id/workoutexperience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your workout-experience:"
+                android:textColor="#fff"
+                android:fontFamily="@font/fredoka_one"
+                android:textSize="18sp"
+                android:gravity="center_horizontal"
+                />
+
+            <Spinner
+                android:id="@+id/workoutexperienceSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/workoutexperience"
+                android:gravity="center"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_horizontal"
+        >
+
+            <TextView
+                android:id="@+id/workoutopportunities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your workout-opportunities:"
+                android:textColor="#fff"
+                android:fontFamily="@font/fredoka_one"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginLeft="0dp"
+
+                />
+
+            <Spinner
+                android:id="@+id/workoutopportunitiesSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/workoutopportunities"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/workoutcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How often do you want to work out?"
+        android:textColor="#fff"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+
+        />
+
+    <Spinner
+        android:id="@+id/workoutcountSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/workoutcount"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+
+        />
+
+    <Button
+        android:id="@+id/createProgramBtn"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="Create Program"
+        android:textSize="15sp"
+        android:fontFamily="@font/fredoka_one"
+        android:layout_below="@id/workoutcountSpinner"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/button"
+        />
+
+
+
+</LinearLayout>
