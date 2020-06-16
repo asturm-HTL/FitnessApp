@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExerciseInDetail"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ExerciseInDetail"
+        android:orientation="vertical"
+        android:background="@android:color/black"
+    >
+
+        <TextView
+            android:id="@+id/tvExerciseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name shown here"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="70sp"
+            android:textAlignment="center"
+            android:padding="20dp"
+            />
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/exerciseImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvExerciseName"
+            android:layout_gravity="center"
+        />
+
+
+        <TextView
+            android:id="@+id/tvTargetMuscle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target Muscle:"
+            android:layout_below="@+id/exerciseImageView"
+            android:textColor="#fff"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="50sp"
+            android:paddingBottom="5dp"
+            android:paddingTop="25dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+        />
+
+        <TextView
+            android:id="@+id/tvTargetMuscleToEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="target muscle shown here"
+            android:layout_below="@+id/tvTargetMuscle"
+            android:textColor="#fff"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="34sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tvExplanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explanation:"
+            android:layout_below="@+id/tvTargetMuscleToEdit"
+            android:textColor="#fff"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="50sp"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+        />
+
+        <TextView
+            android:id="@+id/tvExplanationToEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="explanation shown here"
+            android:layout_below="@+id/tvExplanation"
+            android:textColor="#fff"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="34sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            />
+
+        <TextView
+            android:id="@+id/commentsAndTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comments and Tips:"
+            android:layout_below="@+id/tvExplanationToEdit"
+            android:textColor="#fff"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="50sp"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+        />
+
+        <TextView
+            android:id="@+id/commentsAndTipsToEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="comments and tips shown here"
+            android:layout_below="@+id/commentsAndTips"
+            android:textColor="#fff"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="34sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+        />
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+

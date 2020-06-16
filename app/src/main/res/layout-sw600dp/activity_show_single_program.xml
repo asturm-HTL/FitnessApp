@@ -5,23 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowSingleProgramFromShow"
+    tools:context=".ShowSingleProgramFromCreate"
     android:orientation="vertical"
     android:background="@android:color/black"
-    android:id="@+id/scrollLinearLayoutS"
-    >
+    android:id="@+id/scrollLinearLayout"
+>
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ShowSingleProgramFromShow"
+        tools:context=".ShowSingleProgramFromCreate"
         android:orientation="vertical"
-        >
+    >
 
         <TextView
-            android:id="@+id/programnameTVS"
+            android:id="@+id/programnameTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="80dp"
@@ -31,10 +31,10 @@
             android:textAlignment="center"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="10dp"
-            />
+        />
 
         <TextView
-            android:id="@+id/pull1tvS"
+            android:id="@+id/pull1tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
@@ -43,19 +43,19 @@
             android:textAlignment="center"
             android:layout_marginTop="40dp"
             android:textSize="60dp"
-            />
+        />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewpull1S"
+            android:id="@+id/recyclerviewpull1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="3dp"
             android:layout_marginBottom="40dp"
             android:layout_below="@+id/pull1tv"
-            />
+        />
 
         <TextView
-            android:id="@+id/push1tvS"
+            android:id="@+id/push1tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
@@ -67,16 +67,16 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewpush1S"
+            android:id="@+id/recyclerviewpush1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="40dp"
             android:layout_below="@+id/push1tv"
-            />
+        />
 
         <TextView
-            android:id="@+id/legs1tvS"
+            android:id="@+id/legs1tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
@@ -88,16 +88,16 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewlegs1S"
+            android:id="@+id/recyclerviewlegs1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="40dp"
             android:layout_below="@+id/legs1tv"
-            />
+        />
 
         <TextView
-            android:id="@+id/pull2tvS"
+            android:id="@+id/pull2tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
@@ -109,16 +109,16 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewpull2S"
+            android:id="@+id/recyclerviewpull2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="40dp"
             android:layout_below="@+id/pull2tv"
-            />
+        />
 
         <TextView
-            android:id="@+id/push2tvS"
+            android:id="@+id/push2tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
@@ -130,7 +130,7 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewpush2S"
+            android:id="@+id/recyclerviewpush2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -139,7 +139,7 @@
             />
 
         <TextView
-            android:id="@+id/legs2tvS"
+            android:id="@+id/legs2tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
@@ -151,7 +151,7 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewlegs2S"
+            android:id="@+id/recyclerviewlegs2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -160,11 +160,11 @@
             />
 
         <Button
-            android:id="@+id/saveProgramBtnS"
+            android:id="@+id/saveProgramBtn"
             android:layout_width="420dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:text="Delete Program"
+            android:text="Save Program"
             android:textSize="30sp"
             android:fontFamily="@font/fredoka_one"
             android:layout_below="@id/recyclerviewlegs2"
@@ -172,7 +172,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/button"
             />
-
+        
     </LinearLayout>
 
 </ScrollView>
