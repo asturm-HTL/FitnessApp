@@ -2,6 +2,10 @@ package at.htlgkr.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -14,6 +18,8 @@ import java.util.Locale;
 
 public class Timer extends AppCompatActivity
 {
+
+    public static final String CHANNEL_ID = "timerServiceChannel";
 
     //---------------------------Variables from Main---------------------------
     public static int id;
@@ -92,12 +98,48 @@ public class Timer extends AppCompatActivity
         });
 
         progressBar.setMax((int) mTimeLeftInMillis);
+
+        createNotificationChannel();
+
     }
+    private void createNotificationChannel()
+    {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            NotificationChannel serviceChannel = new NotificationChannel(CHANNEL_ID, "Timer Channel", NotificationManager.IMPORTANCE_DEFAULT);
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(serviceChannel);
+        }
+    }
+
+    public void startService(View v)
+    {
+        String name = "Timer running!";
+
+        Intent serviceIntent = new Intent(this, TimerService.class);
+        serviceIntent.putExtra("inputExtra", name);
+
+        startService(serviceIntent);
+    }
+
+    public void stopService(View v)
+    {
+        Intent serviceIntent = new Intent(this, TimerService.class);
+        stopService(serviceIntent);
+    }
+
 
     private void startTimer()
     {
+
+        View v = new View(Timer.this);
+        startService(v);
+
+
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000)
         {
+
             @Override
             public void onTick(long millisUntilFinished)
             {
@@ -107,6 +149,7 @@ public class Timer extends AppCompatActivity
                 updateCountDownText();
                 actualStatus.setText("Work");
                 mButtonStartPause.setText("Stop");
+
             }
 
             @Override
@@ -126,6 +169,8 @@ public class Timer extends AppCompatActivity
                         counter = 0;
                         actualStatus.setText("Done");
                         mButtonStartPause.setText("Start");
+                        View v = new View(Timer.this);
+                        stopService(v);
                     }
             }
         }.start();

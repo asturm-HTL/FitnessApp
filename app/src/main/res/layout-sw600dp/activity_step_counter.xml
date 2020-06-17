@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StepCounter"
+    android:orientation="vertical"
+    android:background="@android:color/black">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:gravity="center"
+    >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Today's Steps:"
+            android:textColor="#fff"
+            android:textSize="100dp"
+            android:gravity="bottom"
+            android:textAlignment="center"
+            android:fontFamily="@font/fredoka_one"
+        />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_weight="1"
+    >
+
+        <ProgressBar
+            android:id="@+id/stepprogress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/circle_shape_tablet"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/circle_progress_bar_tablet"
+            android:textAlignment="center"
+        />
+
+        <TextView
+            android:id="@+id/actualStepsTV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Steps"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:fontFamily="@font/fredoka_one"
+            android:textSize="120dp"
+
+        />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+    >
+
+
+
+    </FrameLayout>
+    
+
+</LinearLayout>

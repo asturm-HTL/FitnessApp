@@ -1,6 +1,7 @@
 package at.htlgkr.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -423,12 +424,7 @@ public class ExercisesAdvancedView extends AppCompatActivity
         muscleAnatomyList.add(new MuscleAnatomy("Biceps", R.drawable.bicepsanatomy));
         muscleAnatomyList.add(new MuscleAnatomy("Triceps", R.drawable.tricepsanatomy));
         muscleAnatomyList.add(new MuscleAnatomy("Forearms", R.drawable.forearmanatomy));
-
-
-
     }
-
-
 
     //-----------------------------------------GetExercises-----------------------------------------
 

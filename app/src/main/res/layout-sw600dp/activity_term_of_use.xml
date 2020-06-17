@@ -5,20 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Settings"
-    android:background="@android:color/black"
->
+    android:orientation="vertical"
+    tools:context=".TermOfUse">
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SETTINGS"
-        android:textAlignment="center"
+        android:layout_height="match_parent"
+        android:layout_margin="60dp"
+        android:text="If we would already have terms of use you would see them here."
         android:textSize="60dp"
-        android:fontFamily="@font/fredoka_one"
-        android:textColor="#fff"
-        android:layout_marginTop="20dp"
+        android:layout_gravity="center_vertical"
+        android:textAlignment="center"
     />
-
 
 </LinearLayout>
