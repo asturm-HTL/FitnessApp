@@ -1,20 +1,22 @@
 # Resümee
 
 ## Was ist gut gelaufen?
-* Timer funktioniert wie gewollt (zuerst Work dann Pause)
-* Anzeige der richtigen Übungen bei Auswahl der Muskelgruppe
+* Programme erstellen und anzeigen
+* Layouts für Landscape und Tablets
 
 ## Welche Arbeitspakete wurden erledigt?
-* Fast ganzes, eingeplantes, Arbeitspaket 4 (jetzt ganzes eingeplantes)
+* Arbeitspaket 5 (ausgenommen Fragments)
 
 ## Welche Probleme sind aufgetreten?
-* Zeitprobleme, Übungen lassen sich noch nicht im Detail anzeigen anzeigen (In der Unterrichtseinheit noch erledigt)
+* Teilweise noch Scroll bei Recyclerviews
+* Bei ListView, Spinner, RecyclerView noch keine Änderung im Tablet-Layout möglich (Lösung bereits gefunden)
 
 ## Wie liegt die Gruppe im Zeitplan?
-* Mittelmäßig (jetzt gut)
+* Mittelmäßig - Gut
 
 ## Was wird nächste Woche umgesetzt?
-* Übungen im Detail anzeigen (bereits erledigt)
-* Trainingspläne erstellen, anzeigen
-* Fragments und Unterschiedliche Layouts
+* Notifications
+* Delete- und Back-Button beim anzeigen der Trainingspläne
+* Settings und Account
+* Fragments?
 
