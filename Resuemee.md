@@ -15,7 +15,7 @@
 * Mittelmäßig - Gut
 
 ## Was wird nächste Woche umgesetzt?
-* Notifications
+* Notifications (bereits erledigt)
 * Delete- und Back-Button beim anzeigen der Trainingspläne
 * Settings und Account
 * Fragments?
