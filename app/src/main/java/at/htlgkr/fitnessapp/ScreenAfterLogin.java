@@ -35,6 +35,7 @@ public class ScreenAfterLogin extends AppCompatActivity
             {
                 Intent intent = new Intent(ScreenAfterLogin.this, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish(); //Closes when 'Back'
             }
         }, SCREENAFTERLOGIN);

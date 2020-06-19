@@ -9,7 +9,7 @@
         <group android:checkableBehavior="single">
 
             <item
-                android:id="@+id/nav_home_tablet"
+                android:id="@+id/nav_home"
                 android:icon="@drawable/ic_home_tablet"
                 android:title="Home"
             />
@@ -22,7 +22,7 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_account_tablet"
+                    android:id="@+id/nav_account"
                     android:icon="@drawable/ic_account_tablet"
                     android:title="Account"
                     />
@@ -42,7 +42,7 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_settings_tablet"
+                    android:id="@+id/nav_settings"
                     android:icon="@drawable/ic_settings_tablet"
                     android:title="Settings"
                     />

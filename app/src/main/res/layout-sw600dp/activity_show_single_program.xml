@@ -159,20 +159,45 @@
             android:layout_below="@+id/legs2tv"
             />
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        >
+
         <Button
-            android:id="@+id/saveProgramBtn"
-            android:layout_width="420dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:text="Save Program"
-            android:textSize="30sp"
+            android:id="@+id/getBackBtn"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Discard Program"
+            android:textSize="25sp"
             android:fontFamily="@font/fredoka_one"
             android:layout_below="@id/recyclerviewlegs2"
+            android:layout_marginRight="10dp"
             android:textColor="@android:color/black"
             android:layout_marginTop="20dp"
             android:background="@drawable/button"
+
             />
-        
+
+        <Button
+            android:id="@+id/saveProgramBtn"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:text="Save Program"
+            android:textSize="25sp"
+            android:fontFamily="@font/fredoka_one"
+            android:layout_below="@id/recyclerviewlegs2"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/button"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

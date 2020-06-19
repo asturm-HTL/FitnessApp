@@ -15,6 +15,7 @@ import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
 
     public String exercisesGetRequest;
+
+    private static int STARTSCREEN = 124;
+    Handler handler;
 
     //-------------Variables which get changed from LoginActivity------------------
         public static int id;
@@ -327,8 +331,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         CreateProgram.username = username;
         CreateProgram.password = password;
 
-        Intent cpintent = new Intent(this, CreateProgram.class);
-        startActivity(cpintent);
+        handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(MainActivity.this, CreateProgram.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        }, STARTSCREEN);
+
     }
 
     public void startShowPrograms(int id, String firstname, String lastname, String username, String password)
@@ -339,8 +353,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ShowPrograms.username = username;
         ShowPrograms.password = password;
 
-        Intent spintent = new Intent(this, ShowPrograms.class);
-        startActivity(spintent);
+        handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(MainActivity.this, ShowPrograms.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        }, STARTSCREEN);
     }
 
     public void startExercises(int id, String firstname, String lastname, String username, String password)
@@ -351,8 +374,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Exercises.username = username;
         Exercises.password = password;
 
-        Intent eintent = new Intent(this, Exercises.class);
-        startActivity(eintent);
+        handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(MainActivity.this, Exercises.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        }, STARTSCREEN);
     }
 
     public void startTimer(int id, String firstname, String lastname, String username, String password)
@@ -363,8 +395,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Timer.username = username;
         Timer.password = password;
 
-        Intent tintent = new Intent(this, ActivityBeforeTimer.class);
-        startActivity(tintent);
+        handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(MainActivity.this, Timer.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        }, STARTSCREEN);
     }
 
     public void startStepCounter(int id, String firstname, String lastname, String username, String password)
@@ -375,8 +416,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         StepCounter.username = username;
         StepCounter.password = password;
 
-        Intent scintent = new Intent(this, StepCounter.class);
-        startActivity(scintent);
+        handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(MainActivity.this, StepCounter.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        }, STARTSCREEN);
     }
 
     public void startAccount(int id, String firstname, String lastname, String username, String password)
@@ -389,8 +439,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String pwStrFW = pwStr + "*****";
         Account.password = pwStrFW;
 
-        Intent accintent = new Intent(this, Account.class);
-        startActivity(accintent);
+        handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(MainActivity.this, Account.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+            }
+        }, STARTSCREEN);
     }
 
     public void startSettings(int id, String firstname, String lastname, String username, String password)
@@ -401,7 +461,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         StepCounter.username = username;
         StepCounter.password = password;
 
-        Intent settintent = new Intent(this, Settings.class);
-        startActivity(settintent);
+        handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(MainActivity.this, Settings.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        }, STARTSCREEN);
     }
+
+
 }
