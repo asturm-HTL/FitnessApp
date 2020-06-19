@@ -132,10 +132,11 @@ public class Timer extends AppCompatActivity
 
     private void startTimer()
     {
-
-        View v = new View(Timer.this);
-        startService(v);
-
+        if(Settings.switchOnOff == true)
+        {
+            View v = new View(Timer.this);
+            startService(v);
+        }
 
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000)
         {
@@ -169,8 +170,12 @@ public class Timer extends AppCompatActivity
                         counter = 0;
                         actualStatus.setText("Done");
                         mButtonStartPause.setText("Start");
-                        View v = new View(Timer.this);
-                        stopService(v);
+
+                        if(Settings.switchOnOff == true)
+                        {
+                            View v = new View(Timer.this);
+                            stopService(v);
+                        }
                     }
             }
         }.start();

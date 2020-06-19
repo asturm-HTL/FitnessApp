@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Settings"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:background="@android:color/black"
 >
 
@@ -18,7 +20,59 @@
         android:fontFamily="@font/fredoka_one"
         android:textColor="#fff"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="160dp"
     />
 
+    <TextView
+        android:id="@+id/allowNotifTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allow Notifications:"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="25dp"
+        android:textColor="#fff"
+    />
+
+    <Switch
+        android:id="@+id/allowNotifSW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allowNotifTV"
+        android:checked="true"
+        android:textColor="#fff"
+    />
+
+    <TextView
+        android:id="@+id/settingsStepsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daily Steps:"
+        android:fontFamily="@font/fredoka_one"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:id="@+id/settingsStepsET"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:textColor="#fff"
+        android:text="10000"
+        android:textAlignment="center"
+    />
+
+    <Button
+        android:id="@+id/saveSettingsBtn"
+        android:layout_width="210dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="Save"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button"
+        />
 
 </LinearLayout>

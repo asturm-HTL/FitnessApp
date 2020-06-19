@@ -160,7 +160,7 @@
             />
 
         <Button
-            android:id="@+id/saveProgramBtnS"
+            android:id="@+id/deleteProgramBtnS"
             android:layout_width="210dp"
             android:layout_height="60dp"
             android:layout_gravity="center"

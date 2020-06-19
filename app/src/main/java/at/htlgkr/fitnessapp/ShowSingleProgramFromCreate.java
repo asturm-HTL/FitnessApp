@@ -182,6 +182,8 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     public String programName = "";
     public String programSaveString = "";
 
+    Button discardProgramBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -191,6 +193,15 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
         initLists();
         //TODO-----Back button
+
+        discardProgramBtn = findViewById(R.id.getBackBtn);
+        discardProgramBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startMain();
+            }
+        });
 
     }
 
@@ -2525,6 +2536,8 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
 
+
+
         //TODO----implement 4 2 and 1 times a week
     }
 
@@ -2550,7 +2563,15 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         try
         {
             PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(fullPath)));
-            out.print(stringReadFromSDCard + ";" + programSaveString);
+            if(stringReadFromSDCard != "")
+            {
+                out.print(stringReadFromSDCard + ";" + programSaveString);
+            }
+            else
+            {
+                out.print(programSaveString);
+            }
+            //out.print("");
             out.flush();
             out.close();
             showSnackbar();
@@ -2632,6 +2653,8 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         }
 
     }
+
+
 
 }
 

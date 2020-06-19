@@ -202,6 +202,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_account:
                 startAccount(id, firstname, lastname, username, password);
                 break;
+            case R.id.nav_settings:
+                startSettings(id, firstname, lastname, username, password);
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.END);
@@ -378,13 +381,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void startAccount(int id, String firstname, String lastname, String username, String password)
     {
+        Account.id = String.valueOf(id);
+        Account.firstname = firstname;
+        Account.lastname = lastname;
+        Account.username = username;
+        String pwStr = password.substring(0, 1);
+        String pwStrFW = pwStr + "*****";
+        Account.password = pwStrFW;
+
+        Intent accintent = new Intent(this, Account.class);
+        startActivity(accintent);
+    }
+
+    public void startSettings(int id, String firstname, String lastname, String username, String password)
+    {
         StepCounter.id = id;
         StepCounter.firstname = firstname;
         StepCounter.lastname = lastname;
         StepCounter.username = username;
         StepCounter.password = password;
 
-        Intent accintent = new Intent(this, Account.class);
-        startActivity(accintent);
+        Intent settintent = new Intent(this, Settings.class);
+        startActivity(settintent);
     }
 }

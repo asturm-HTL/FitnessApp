@@ -157,21 +157,50 @@
             android:layout_marginTop="3dp"
             android:layout_marginBottom="20dp"
             android:layout_below="@+id/legs2tv"
+            android:gravity="center"
             />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            >
+
+        <Button
+            android:id="@+id/getBackBtn"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Discard Program"
+            android:textSize="15sp"
+            android:fontFamily="@font/fredoka_one"
+            android:layout_below="@id/recyclerviewlegs2"
+            android:layout_marginRight="10dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+
+        />
 
         <Button
             android:id="@+id/saveProgramBtn"
-            android:layout_width="210dp"
+            android:layout_width="170dp"
             android:layout_height="60dp"
-            android:layout_gravity="center"
             android:text="Save Program"
             android:textSize="15sp"
             android:fontFamily="@font/fredoka_one"
             android:layout_below="@id/recyclerviewlegs2"
             android:textColor="@android:color/black"
             android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/button"
-            />
+            android:layout_gravity="center_horizontal"
+        />
+
+        </LinearLayout>
+
+
         
     </LinearLayout>
 

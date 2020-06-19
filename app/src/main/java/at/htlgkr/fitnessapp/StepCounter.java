@@ -48,7 +48,17 @@ public class StepCounter extends AppCompatActivity implements SensorEventListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_counter);
 
-        targetSteps = Settings.targetSteps;
+        if(Settings.targetSteps == 0)
+        {
+            targetSteps = 10000;
+        }
+        else
+        {
+            targetSteps = Settings.targetSteps;
+        }
+
+
+        System.out.println("MOIS_"+targetSteps);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         progressBar=findViewById(R.id.stepprogress);

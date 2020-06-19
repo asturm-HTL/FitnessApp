@@ -126,6 +126,8 @@ public class ShowPrograms extends AppCompatActivity
                         String[] listfromsplitsplit1 = listFromSplit.get(x).toString().split("\\|");
 
 
+                        ShowSingleProgramFromShow.deleteStringFromSP = listFromSplit.get(x).toString();
+
 
                         if(listfromsplitsplit1[0].toString().equals("6"))
                         {
@@ -843,7 +845,12 @@ public class ShowPrograms extends AppCompatActivity
             }
 
             stringReadFromSDCard = text.toString();
-            splitSDCardString(stringReadFromSDCard);
+            ShowSingleProgramFromShow.fromStringFromSP = stringReadFromSDCard;
+
+            if(stringReadFromSDCard != "")
+            {
+                splitSDCardString(stringReadFromSDCard);
+            }
         }
         else
         {
