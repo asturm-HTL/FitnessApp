@@ -161,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, "is Landscape", Toast.LENGTH_SHORT).show();
         }*/
 
+
     }
 
     @Override

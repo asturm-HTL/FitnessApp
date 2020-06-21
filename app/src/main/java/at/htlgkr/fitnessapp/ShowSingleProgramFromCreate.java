@@ -33,7 +33,8 @@ import java.io.PrintWriter;
 import java.nio.Buffer;
 import java.util.ArrayList;
 
-public class ShowSingleProgramFromCreate extends AppCompatActivity {
+public class ShowSingleProgramFromCreate extends AppCompatActivity implements RecyclerViewAdapter.OnExerciseListener
+{
 
     private static final int RQ_WRITE_STORAGE = 12345;
     public static String counter = null;
@@ -301,32 +302,32 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
             legs2tv.setText("Legs - Day 6");
 
             recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-            rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+            rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
             recyclerViewPull1.setAdapter(rvadaptPull1);
             recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
             recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-            rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+            rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2,this);
             recyclerViewPull2.setAdapter(rvadaptPull2);
             recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
             recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-            rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+            rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
             recyclerViewPush1.setAdapter(rvadaptPush1);
             recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
             recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
-            rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+            rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2,this);
             recyclerViewPush2.setAdapter(rvadaptPush2);
             recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
 
             recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-            rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+            rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
             recyclerViewLegs1.setAdapter(rvadaptLegs1);
             recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
             recyclerViewLegs2 = findViewById(R.id.recyclerviewlegs2);
-            rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2);
+            rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2,this);
             recyclerViewLegs2.setAdapter(rvadaptLegs2);
             recyclerViewLegs2.setLayoutManager(new LinearLayoutManager(this));
 
@@ -501,27 +502,27 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2,this);
         recyclerViewPull2.setAdapter(rvadaptPull2);
         recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
-        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2,this);
         recyclerViewPush2.setAdapter(rvadaptPush2);
         recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -653,17 +654,17 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -807,32 +808,32 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         legs2tv.setText("Legs - Day 6");
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2,this);
         recyclerViewPull2.setAdapter(rvadaptPull2);
         recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
-        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2,this);
         recyclerViewPush2.setAdapter(rvadaptPush2);
         recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs2 = findViewById(R.id.recyclerviewlegs2);
-        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2);
+        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2,this);
         recyclerViewLegs2.setAdapter(rvadaptLegs2);
         recyclerViewLegs2.setLayoutManager(new LinearLayoutManager(this));
 
@@ -1007,27 +1008,27 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2,this);
         recyclerViewPull2.setAdapter(rvadaptPull2);
         recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
-        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2,this);
         recyclerViewPush2.setAdapter(rvadaptPush2);
         recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -1159,17 +1160,17 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -1312,32 +1313,32 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         legs2tv.setText("Legs - Day 6");
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2,this);
         recyclerViewPull2.setAdapter(rvadaptPull2);
         recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
-        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2,this);
         recyclerViewPush2.setAdapter(rvadaptPush2);
         recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs2 = findViewById(R.id.recyclerviewlegs2);
-        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2);
+        rvadaptLegs2 = new RecyclerViewAdapter(this, orderdExercisesLegs2, orderdSetsLegs2, orderdRepsLegs2,this);
         recyclerViewLegs2.setAdapter(rvadaptLegs2);
         recyclerViewLegs2.setLayoutManager(new LinearLayoutManager(this));
 
@@ -1512,27 +1513,27 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesPull2, orderdSetsPull2, orderdRepsPull2,this);
         recyclerViewPull2.setAdapter(rvadaptPull2);
         recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush2 = findViewById(R.id.recyclerviewpush2);
-        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2);
+        rvadaptPush2 = new RecyclerViewAdapter(this, orderdExercisesPush2, orderdSetsPush2, orderdRepsPush2,this);
         recyclerViewPush2.setAdapter(rvadaptPush2);
         recyclerViewPush2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -1664,17 +1665,17 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesPull1, orderdSetsPull1, orderdRepsPull1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesPush1, orderdSetsPush1, orderdRepsPush1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLegs1, orderdSetsLegs1, orderdRepsLegs1,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -1790,22 +1791,22 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2,this);
         recyclerViewPull2.setAdapter(rvadaptPull2);
         recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -1906,12 +1907,12 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         push1tv.setText("Lowerbody - Day 2");
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -2012,22 +2013,22 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2,this);
         recyclerViewPull2.setAdapter(rvadaptPull2);
         recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -2128,12 +2129,12 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         push1tv.setText("Lowerbody - Day 2");
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -2234,22 +2235,22 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
 
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPull2 = findViewById(R.id.recyclerviewpull2);
-        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2);
+        rvadaptPull2 = new RecyclerViewAdapter(this, orderdExercisesUB2, orderdSetsUB2, orderdRepsUB2,this);
         recyclerViewPull2.setAdapter(rvadaptPull2);
         recyclerViewPull2.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewLegs1 = findViewById(R.id.recyclerviewlegs1);
-        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2);
+        rvadaptLegs1 = new RecyclerViewAdapter(this, orderdExercisesLB2, orderdSetsLB2, orderdRepsLB2,this);
         recyclerViewLegs1.setAdapter(rvadaptLegs1);
         recyclerViewLegs1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -2350,12 +2351,12 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         push1tv.setText("Lowerbody - Day 2");
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesUB1, orderdSetsUB1, orderdRepsUB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerViewPush1 = findViewById(R.id.recyclerviewpush1);
-        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1);
+        rvadaptPush1 = new RecyclerViewAdapter(this, orderdExercisesLB1, orderdSetsLB1, orderdRepsLB1,this);
         recyclerViewPush1.setAdapter(rvadaptPush1);
         recyclerViewPush1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -2412,7 +2413,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         pull1tv.setText("Fullbody - Day 1");
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -2455,7 +2456,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         pull1tv.setText("Fullbody - Day 1");
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -2498,7 +2499,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
         pull1tv.setText("Fullbody - Day 1");
 
         recyclerViewPull1 = findViewById(R.id.recyclerviewpull1);
-        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1);
+        rvadaptPull1 = new RecyclerViewAdapter(this, orderdExercisesFB1, orderdSetsFB1, orderdRepsFB1,this);
         recyclerViewPull1.setAdapter(rvadaptPull1);
         recyclerViewPull1.setLayoutManager(new LinearLayoutManager(this));
 
@@ -2618,6 +2619,7 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     {
         Intent mintent = new Intent(ShowSingleProgramFromCreate.this, MainActivity.class);
         startActivity(mintent);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     public void readFromSDCard()
@@ -2655,7 +2657,10 @@ public class ShowSingleProgramFromCreate extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onExerciseClick(int position) {
 
+    }
 }
 
 

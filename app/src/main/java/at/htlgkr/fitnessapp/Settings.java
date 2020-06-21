@@ -86,4 +86,12 @@ public class Settings extends AppCompatActivity
         Intent mintent = new Intent(Settings.this, MainActivity.class);
         startActivity(mintent);
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 }

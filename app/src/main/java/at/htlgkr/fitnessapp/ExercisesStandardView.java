@@ -339,13 +339,6 @@ public class ExercisesStandardView extends AppCompatActivity
 
             }
 
-
-
-
-            //pictures get loaded after register
-            // Picasso.get().load("http://www.fitnesscenter-mitter.at/img/FitnessApp/" + imglinks.get(191) + ".png").into(imageViewTest);
-            //TODO--.jpgs umdoa
-
         }
         catch (ExecutionException e)
         {

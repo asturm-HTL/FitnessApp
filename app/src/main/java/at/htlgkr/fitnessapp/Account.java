@@ -42,4 +42,12 @@ public class Account extends AppCompatActivity implements FragmentACC1.FragmentA
     public void onInputBSent(CharSequence input) {
 
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 }
