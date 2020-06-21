@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,6 +38,7 @@ import java.util.concurrent.ExecutionException;
 
 public class ShowSingleProgramFromShow extends AppCompatActivity implements RecyclerViewAdapter.OnExerciseListener
 {
+    private static int STARTSCREEN = 124;
     public static final int RQ_WRITE_STORAGE = 12345;
 
     public static String counterImport = "";
@@ -683,10 +685,6 @@ public class ShowSingleProgramFromShow extends AppCompatActivity implements Recy
                             startExerciseDetailed(exBeforeSplit.get(j).toString());
                             System.out.println();
                         }
-                        else
-                        {
-                            System.out.println("MOISSS_nicht");
-                        }
 
                     }
                 }
@@ -704,9 +702,36 @@ public class ShowSingleProgramFromShow extends AppCompatActivity implements Recy
 
     public void startExerciseDetailed(String exerciseString)
     {
-        Intent edintent = new Intent(ShowSingleProgramFromShow.this, ExerciseInDetail.class);
         ExerciseInDetail.exerciseStringToSplit = exerciseString;
-        startActivity(edintent);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(ShowSingleProgramFromShow.this, ExerciseInDetail.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        }, STARTSCREEN);
+
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(ShowSingleProgramFromShow.this, MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            }
+        }, STARTSCREEN);
+    }
+
     //----------------------------------------GetExercises-End---------------------------------------
 }
