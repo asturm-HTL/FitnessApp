@@ -5,7 +5,7 @@ Abschlussprojekt 3.Klasse HTBLA Grieskirchen, Sturm Andreas.
 Die App ist eine Hilfe für alle Trainingsanfänger- und fortgeschrittene. Sie soll Trainingspläne (unabhängig ob das Training Zuhause oder im Fitnessstudio stattfindet) erstellen, den User beim Training unterstützen und diesem die richtige Ausführung der Übungen beibringen.
 
 ## App-Status
-Die App ist fertig entwickelt und wird nun noch auf Bugs getestet
+Die App ist fertig entwickelt.
 
 ## Aufbau des Repository
 Bei einem Update des README-Files im Repository wird ein commit mit einem \_v.xx angehängt. Bei Änderungen im Code werden die Commits selbsterklärend (Englisch) benannt (z.B. "Layout created").
