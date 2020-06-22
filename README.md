@@ -22,6 +22,6 @@ Das Readme ist als 'README.md' im Repository zu finden.
 ### Resümee
 Das Resümee ist als 'Resuemee.md' im Repository zu finden.
 
-## Stundenzuteilung
+### Stundenzuteilung
 Die Stundenzuteilung ist unter folgendem Link zu finden:
 * https://docs.google.com/spreadsheets/d/1K3oBcLFKYkkwLIHUEVgjbY8VySNzyXDoy33RKSpGhD4/edit#gid=0
