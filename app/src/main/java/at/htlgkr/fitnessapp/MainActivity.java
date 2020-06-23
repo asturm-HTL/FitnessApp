@@ -210,6 +210,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_settings:
                 startSettings(id, firstname, lastname, username, password);
                 break;
+            case R.id.nav_logout:
+                startLogin();
+                break;
+
         }
 
         drawer.closeDrawer(GravityCompat.END);
@@ -402,7 +406,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void run()
             {
-                Intent intent = new Intent(MainActivity.this, Timer.class);
+                Intent intent = new Intent(MainActivity.this, ActivityBeforeTimer.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
@@ -473,6 +477,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         }, STARTSCREEN);
+    }
+
+    public void startLogin()
+    {
+        Intent lintent = new Intent(MainActivity.this, Login.class);
+        startActivity(lintent);
     }
 
 

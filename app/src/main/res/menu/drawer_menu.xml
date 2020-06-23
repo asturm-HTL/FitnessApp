@@ -37,7 +37,7 @@
 
     </item>
 
-    <item android:title="Settings">
+    <item android:title="General">
 
         <menu>
             <group android:checkableBehavior="single">
@@ -45,6 +45,11 @@
                     android:id="@+id/nav_settings"
                     android:icon="@drawable/ic_settings"
                     android:title="Settings"
+                    />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="Logout"
                     />
             </group>
         </menu>

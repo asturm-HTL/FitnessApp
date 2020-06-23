@@ -271,5 +271,8 @@ public class Login extends AppCompatActivity
         startActivity(startScreenAfterLoginIntent);
     }
 
+    @Override
+    public void onBackPressed() {
 
+    }
 }

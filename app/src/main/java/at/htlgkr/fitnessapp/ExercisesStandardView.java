@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,6 +38,8 @@ public class ExercisesStandardView extends AppCompatActivity
     //---------------------------MainVariables-End-----------------------------
 
     public String exercisesGetRequest;
+
+    private static int STARTSCREEN = 124;
 
     public List imglinks = new ArrayList();
     public List exBeforeSplit = new ArrayList();
@@ -353,9 +356,36 @@ public class ExercisesStandardView extends AppCompatActivity
 
     public void startExerciseDetailed(String exerciseString)
     {
-        Intent edintent = new Intent(ExercisesStandardView.this, ExerciseInDetail.class);
         ExerciseInDetail.exerciseStringToSplit = exerciseString;
-        startActivity(edintent);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(ExercisesStandardView.this, ExerciseInDetail.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        }, STARTSCREEN);
+
+
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                Intent intent = new Intent(ExercisesStandardView.this, MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            }
+        }, STARTSCREEN);
     }
 
 }
